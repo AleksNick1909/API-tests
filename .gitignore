@@ -1,7 +1,9 @@
 .idea/
 __pycache__/
 *.pyc
-venv/
+.pytest_cache/
+.venv/
 .env
 config/.data_current_user.json
 utils/logger/logs/api_requests.log
+config/credentials.py
