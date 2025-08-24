@@ -1,0 +1,7 @@
+.idea/
+__pycache__/
+*.pyc
+venv/
+.env
+config/.data_current_user.json
+utils/logger/logs/api_requests.log
