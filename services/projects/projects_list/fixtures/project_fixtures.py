@@ -18,7 +18,7 @@ def function_create_and_delete_project(class_object_list_api: ProjectListAPI, re
     В конце удаляет созданный проект
     """
     construction = class_object_list_api.create_project()
-    project_id = construction.data.id
+    project_id = construction.id
     set_project_id(project_id)
 
     print(f'ID созданного проекта: {project_id}')

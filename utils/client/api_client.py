@@ -1,4 +1,5 @@
 import requests
+from typing import get_type_hints
 from utils.logger.logger import logger
 from helpers.helper import Helper
 from config.headers import Headers
@@ -56,12 +57,36 @@ class RequestClient:
     def _validate_response(self, response: requests.Response, model: type[BaseModel], success: bool = True):
         response_data = response.json()
         self.helper.attach('response', response_data)
+        # print("Response data:", response_data)  # Отладка
         if success:
             assert 200 <= response.status_code < 300, response_data
-            if isinstance(response_data, dict):
-                return model(**response_data)
-            elif isinstance(response_data, list):
-                return [model(**item) for item in response_data]
+            # Список возможных ключей обёртки (при необходимости добавить, изменить)
+            wrapper_keys = ['data', 'result', 'payload']
+            # Проверяем поля модели
+            model_fields = get_type_hints(model)
+            # Проверяем, есть ли в модели поле, совпадающее с одним из ключей обёртки
+            has_wrapper_field = any(key in model_fields for key in wrapper_keys)
+            # Если в ответе есть словарь и один из ключей обёртки
+            if not has_wrapper_field and isinstance(response_data, dict):
+                # Ищем первый существующий ключ обёртки в ответе
+                for key in wrapper_keys:
+                    if key in response_data:
+                        actual_data = response_data[key]
+                        # print(f"Extracted wrapper key: {key}")  # Отладка
+                        break
+                else:
+                    actual_data = response_data  # Если ключ обёртки не найден, берём весь ответ
+            else:
+                actual_data = response_data  # Модель ожидает обёртку или ответ без неё
+            # print("Actual data for model:", actual_data)  # Отладка
+            try:
+                if isinstance(actual_data, dict):
+                    return model(**actual_data)
+                elif isinstance(actual_data, list):
+                    return [model(**item) for item in actual_data]
+            except Exception as e:
+                print(f"Validation error for model {model.__name__}: {e}")  # Отладка
+                raise
         else:
             assert not (200 <= response.status_code < 300), response_data
 

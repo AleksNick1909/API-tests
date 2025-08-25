@@ -66,7 +66,7 @@ class StructuresSmrSchema(BaseModel):
     date_begin_fact: datetime | None = Field(alias='dateBeginFact')
     date_end_plan: datetime | None = Field(alias='dateEndPlan')
     date_end_fact: datetime | None = Field(alias='dateEndFact')
-    aggregatedJobs_data: AggregatedJobsData | None = Field(alias='aggregatedJobsData')
+    aggregated_jobs_data: AggregatedJobsData | None = Field(alias='aggregatedJobsData')
     path: list[PathItem]
     direction: Direction | None
     type_of_work: Any | None = Field(alias='typeOfWork')

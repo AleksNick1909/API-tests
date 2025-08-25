@@ -10,4 +10,4 @@ class TestStructuresSmr(BaseTest):
 
     def test_create_structures_smr(self):
         structures_smr = self.structures_smr_api.create_structures_smr_api()
-        # print(structures_smr)
+        print(structures_smr)
