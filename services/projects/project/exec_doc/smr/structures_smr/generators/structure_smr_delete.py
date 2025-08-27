@@ -1,6 +1,6 @@
 
 
-class DeleteStructureSmr:
+class DeleteStructureSmrGen:
 
     def __init__(self):
         self.result = []

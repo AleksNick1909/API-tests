@@ -1,7 +1,7 @@
 from config.auth import user_id
 
 
-class CreateStructureSmr:
+class CreateStructureSmrGen:
     def __init__(self):
         self.result = {}
 
@@ -15,6 +15,10 @@ class CreateStructureSmr:
 
     def set_user_id(self, id_user: int = user_id):
         self.result['userId'] = id_user
+        return self
+
+    def set_parent_id(self, parent_id: int):
+        self.result['parentId'] = parent_id
         return self
 
     def build(self):

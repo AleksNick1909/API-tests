@@ -1,17 +1,16 @@
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_get import GetStructureSmr
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_update import UpdateStructureSmr
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_create import CreateStructureSmr
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_delete import DeleteStructureSmr
-from config.auth import user_id
+from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_get import GetStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_update import UpdateStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_create import CreateStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_delete import DeleteStructureSmrGen
 
 
 class StructureSmrPayloads:
 
     def __init__(self):
-        self.get = GetStructureSmr()
-        self.update = UpdateStructureSmr()
-        self.create = CreateStructureSmr()
-        self.delete = DeleteStructureSmr()
+        self.get = GetStructureSmrGen()
+        self.update = UpdateStructureSmrGen()
+        self.create = CreateStructureSmrGen()
+        self.delete = DeleteStructureSmrGen()
 
     def get_structure_smr(self):
         params = self.get.set_page().set_count().build()

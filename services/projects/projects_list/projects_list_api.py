@@ -1,8 +1,6 @@
 import allure
 from config.base_api import BaseAPI
 
-
-# from config.headers import Headers
 from services.projects.projects_list.payloads import Payloads
 from services.projects.projects_list.endpoints import Endpoints
 from services.projects.projects_list.models.model_projects_list import *
@@ -11,7 +9,6 @@ from services.projects.projects_list.models.model_projects_list import *
 class ProjectListAPI(BaseAPI):
 
     def __init__(self):
-        # self._headers = Headers()
         self._endpoint = Endpoints()
         self._payload = Payloads()
 

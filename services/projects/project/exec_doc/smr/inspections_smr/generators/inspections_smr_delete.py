@@ -1,6 +1,6 @@
 
 
-class UpdateStructureSmrGen:
+class DeleteInspectionsSmrGen:
 
     def __init__(self):
         self.result = {}

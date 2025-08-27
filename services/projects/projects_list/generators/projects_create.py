@@ -1,7 +1,7 @@
 from config.auth import current_user
 
 
-class CreateProject:
+class CreateProjectGen:
 
     def __init__(self):
         self.result = {}

@@ -1,16 +1,16 @@
-from services.projects.projects_list.generators.projects_get import GetProjects
-from services.projects.projects_list.generators.projects_create import CreateProject
-from services.projects.projects_list.generators.projects_update import UpdateProject
-from services.projects.projects_list.generators.projects_delete import DeleteProjects
+from services.projects.projects_list.generators.projects_get import GetProjectsGen
+from services.projects.projects_list.generators.projects_create import CreateProjectGen
+from services.projects.projects_list.generators.projects_update import UpdateProjectGen
+from services.projects.projects_list.generators.projects_delete import DeleteProjectsGen
 
 
 class Payloads:
 
     def __init__(self):
-        self.get = GetProjects()
-        self.update = UpdateProject()
-        self.create = CreateProject()
-        self.delete = DeleteProjects()
+        self.get = GetProjectsGen()
+        self.update = UpdateProjectGen()
+        self.create = CreateProjectGen()
+        self.delete = DeleteProjectsGen()
 
     def get_projects(self):
         params = self.get.set_count().set_page().set_company_id().build()

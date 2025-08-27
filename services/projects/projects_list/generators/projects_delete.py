@@ -1,7 +1,7 @@
 from config.auth import current_user
 
 
-class DeleteProjects:
+class DeleteProjectsGen:
 
     def __init__(self):
         self.result = {}
