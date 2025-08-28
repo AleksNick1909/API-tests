@@ -21,8 +21,6 @@ def function_create_and_delete_project(class_object_list_api: ProjectListAPI, re
     project_id = construction.id
     set_project_id(project_id)
 
-    print(f'ID созданного проекта: {project_id}')
-
     # Функция удаляет созданный проект
     # def cleanup():
     #     class_object_list_api.delete_project(project_id=project_id)
