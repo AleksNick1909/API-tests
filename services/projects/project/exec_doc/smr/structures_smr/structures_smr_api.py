@@ -23,3 +23,10 @@ class StructuresSmrAPI(BaseAPI):
                                           model=StructuresSmrSchema,
                                           json=self._payload.create_structure_smr())
         return structures_smr
+
+    @allure.step(f'Удаление структуры СМР')
+    def delete_structures_smr_api(self, structure_smr_id: int):
+        structure_smr = self.client.delete(endpoint=self._endpoint.delete_structures_smr_api(),
+                                           json=self._payload.delete_structure_smr(structure_smr_id))
+        return structure_smr
+

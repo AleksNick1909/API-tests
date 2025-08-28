@@ -11,3 +11,7 @@ class StructuresSmrEndpoints:
     @staticmethod
     def create_structures_smr_api() -> str:
         return f'{StructureSmrRoutes.structures_smr(project_id=current_user.project_id)}'
+
+    @staticmethod
+    def delete_structures_smr_api() -> str:
+        return f'{StructureSmrRoutes.structures_smr(project_id=current_user.project_id)}'

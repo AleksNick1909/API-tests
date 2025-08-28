@@ -20,8 +20,8 @@ def ficture_create_and_delete_structures_smr(class_structures_smr_api: Structure
 
     print(f'ID созданной структуры СМР: {structure_smr_id}')
 
-    # Функция удаляет созданный проект
-    # def cleanup():
-    #     class_structures_smr_api.delete_project(project_id=project_id)
-    # request.addfinalizer(cleanup)
+    # Функция удаляет созданную структуру СМР
+    def cleanup():
+        class_structures_smr_api.delete_structures_smr_api(structure_smr_id=structure_smr_id)
+    request.addfinalizer(cleanup)
     return structure_smr

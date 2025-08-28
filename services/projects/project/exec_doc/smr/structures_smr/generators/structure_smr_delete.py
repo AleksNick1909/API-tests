@@ -10,4 +10,6 @@ class DeleteStructureSmrGen:
         return self
 
     def build(self):
-        return self.result
+        return {
+            'structureIds': self.result
+        }
