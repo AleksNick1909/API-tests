@@ -22,7 +22,7 @@ def function_create_and_delete_project(class_object_list_client: ProjectListAPI,
     set_project_id(project_id)
 
     # Функция удаляет созданный проект
-    def cleanup():
-        class_object_list_client.delete_project(project_id=project_id)
-    request.addfinalizer(cleanup)
+    # def cleanup():
+    #     class_object_list_client.delete_project(project_id=project_id)
+    # request.addfinalizer(cleanup)
     return construction

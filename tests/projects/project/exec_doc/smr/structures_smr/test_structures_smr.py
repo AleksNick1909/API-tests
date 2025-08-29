@@ -1,5 +1,7 @@
 import allure
 from config.base_test import BaseTest
+from config.auth import current_user
+from services.projects.project.exec_doc.smr.structures_smr.registry.fixtures.structure_smr_fixtures import *
 
 
 @allure.parent_suite('API test case')
@@ -16,6 +18,21 @@ class TestStructuresSmr(BaseTest):
     def test_create_structures_smr(self):
         structures_smr = self.structures_smr_api.create_structures_smr_api()
         print(structures_smr)
+
+    @allure.title('Обновление структуры СМР')
+    def test_update_structures_smr(self, ficture_create_and_delete_structures_smr):
+        new_structure_smr = ficture_create_and_delete_structures_smr
+        structure_smr = self.structures_smr_api.update_structures_smr_api(
+            structure_smr_id=new_structure_smr.id,
+            identifier='id_1',
+            cipher='Шифр_1',
+            representativeId=current_user.representative_id,
+            customerId=current_user.representative_id,
+        )
+        assert structure_smr.identifier == 'id_1'
+        assert structure_smr.cipher == 'Шифр_1'
+        assert structure_smr.representative['id'] == current_user.representative_id
+        assert structure_smr.customer['id'] == current_user.representative_id
 
     @allure.title('Удаление структуры СМР')
     def test_create_and_delete_structures_smr(self):

@@ -24,6 +24,10 @@ class StructureSmrPayloads:
         body = self.create.set_user_id().set_row_id().set_position().build()
         return body
 
+    def update_structure_smr(self, **kwargs):
+        body = self.update.set_fields(**kwargs).build()
+        return body
+
     def delete_structure_smr(self, structure_ids):
         body = self.delete.set_structure_ids(structure_ids).build()
         return body
