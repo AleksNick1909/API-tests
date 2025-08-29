@@ -9,4 +9,4 @@ class TestUsers(BaseTest):
 
     @allure.title('Получение информации о пользователе')
     def test_get_user(self):
-        user = self.users_api.get_user()
+        self.users_api.get_user()

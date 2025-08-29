@@ -1,6 +1,6 @@
 from config.auth import user_id
 
 
-class Endpoints:
+class UsersRoutes:
 
     get_user = f"/api/users/{user_id}"
