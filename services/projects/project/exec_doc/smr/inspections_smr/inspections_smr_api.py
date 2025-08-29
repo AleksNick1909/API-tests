@@ -18,8 +18,8 @@ class InspectionsSmrAPI(BaseAPI):
         return inspections_smr_list
 
     @allure.step(f'Создание инспекции СМР')
-    def create_inspections_smr_api(self) -> InspectionSchema:
+    def create_inspections_smr_api(self, type_inspection: int) -> InspectionSchema:
         inspection_smr = self.client.post(endpoint=self._endpoint.create_inspections_smr_api(),
                                           model=InspectionSchema,
-                                          json=self._payload.create_inspection_smr(10503))  # дописать id типа инспекции
+                                          json=self._payload.create_inspection_smr(type_inspection))
         return inspection_smr

@@ -29,4 +29,3 @@ class StructuresSmrAPI(BaseAPI):
         structure_smr = self.client.delete(endpoint=self._endpoint.delete_structures_smr_api(),
                                            json=self._payload.delete_structure_smr(structure_smr_id))
         return structure_smr
-

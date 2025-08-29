@@ -14,7 +14,7 @@ class TestProjectsList(BaseTest):
     @allure.title('Создание проекта')
     def test_create_project(self):
         project = self.projects_list_api.create_project()
-        print(project)
+        assert project.full_name == 'Новый проект'
 
     @allure.title('Обновление проекта')
     def test_update_project(self):
@@ -23,4 +23,4 @@ class TestProjectsList(BaseTest):
             objectNumber="2",
             shortName="Sub New Project Name",
         )
-        print(project.full_name)
+        assert project.full_name == "New Project Name"

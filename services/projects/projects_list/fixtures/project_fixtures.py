@@ -5,24 +5,24 @@ from services.projects.projects_list.projects_list_api import ProjectListAPI
 
 
 @pytest.fixture(scope='class')
-def class_object_list_api() -> ProjectListAPI:
+def class_object_list_client() -> ProjectListAPI:
     return ProjectListAPI()
 
 
 @pytest.fixture(scope='function')
 @allure.step(f'Создание и удаление проекта')
-def function_create_and_delete_project(class_object_list_api: ProjectListAPI, request):
+def function_create_and_delete_project(class_object_list_client: ProjectListAPI, request):
     """
-    Создает новый проект"
-    Записывает id созданной стройки в config.auth.project_id
-    В конце удаляет созданный проект
+        Фикстура оздает новый проект"
+        Записывает id созданной стройки в config.auth.project_id
+        В конце удаляет созданный проект
     """
-    construction = class_object_list_api.create_project()
+    construction = class_object_list_client.create_project()
     project_id = construction.id
     set_project_id(project_id)
 
     # Функция удаляет созданный проект
-    # def cleanup():
-    #     class_object_list_api.delete_project(project_id=project_id)
-    # request.addfinalizer(cleanup)
+    def cleanup():
+        class_object_list_client.delete_project(project_id=project_id)
+    request.addfinalizer(cleanup)
     return construction
