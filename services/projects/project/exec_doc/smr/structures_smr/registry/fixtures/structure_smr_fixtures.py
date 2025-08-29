@@ -1,6 +1,6 @@
 import pytest
 import allure
-from services.projects.project.exec_doc.smr.structures_smr.structures_smr_api import StructuresSmrAPI
+from services.projects.project.exec_doc.smr.structures_smr.registry.structures_smr_api import StructuresSmrAPI
 
 
 @pytest.fixture(scope='class')

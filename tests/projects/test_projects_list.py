@@ -23,4 +23,4 @@ class TestProjectsList(BaseTest):
             objectNumber="2",
             shortName="Sub New Project Name",
         )
-        print(f'{project.fullName} == "New Project Name"')
+        print(project.full_name)

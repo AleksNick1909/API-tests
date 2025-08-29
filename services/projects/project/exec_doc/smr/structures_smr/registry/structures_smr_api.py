@@ -1,8 +1,8 @@
 import allure
 from config.base_api import BaseAPI
-from services.projects.project.exec_doc.smr.structures_smr.payloads import StructureSmrPayloads
-from services.projects.project.exec_doc.smr.structures_smr.endpoints import StructuresSmrEndpoints
-from services.projects.project.exec_doc.smr.structures_smr.models.model_structures_smr import *
+from services.projects.project.exec_doc.smr.structures_smr.registry.payloads import StructureSmrPayloads
+from services.projects.project.exec_doc.smr.structures_smr.registry.endpoints import StructuresSmrEndpoints
+from services.projects.project.exec_doc.smr.structures_smr.registry.models.model_structures_smr import *
 
 
 class StructuresSmrAPI(BaseAPI):

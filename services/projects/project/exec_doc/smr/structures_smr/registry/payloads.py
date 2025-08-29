@@ -1,7 +1,11 @@
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_get import GetStructureSmrGen
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_update import UpdateStructureSmrGen
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_create import CreateStructureSmrGen
-from services.projects.project.exec_doc.smr.structures_smr.generators.structure_smr_delete import DeleteStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
+    structure_smr_get import GetStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
+    structure_smr_update import UpdateStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
+    structure_smr_create import CreateStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
+    structure_smr_delete import DeleteStructureSmrGen
 
 
 class StructureSmrPayloads:

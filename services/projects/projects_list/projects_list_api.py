@@ -22,7 +22,7 @@ class ProjectListAPI(BaseAPI):
         return projects_list
 
     @allure.step('Создание проекта')
-    def create_project(self):
+    def create_project(self) -> ConstructionProjectSchema:
         project = self.client.post(
             endpoint=self._endpoint.create_project_api(),
             model=ConstructionProjectSchema,
@@ -31,7 +31,7 @@ class ProjectListAPI(BaseAPI):
         return project
 
     @allure.step('Обновление проекта')
-    def update_project(self, **kwargs):
+    def update_project(self, **kwargs) -> ConstructionProjectSchema:
         project = self.client.patch(
             endpoint=self._endpoint.update_project_api(),
             model=ConstructionProjectSchema,

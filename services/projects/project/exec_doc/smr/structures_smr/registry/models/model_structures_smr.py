@@ -1,4 +1,3 @@
-from datetime import datetime
 from typing import Any
 from pydantic import BaseModel, Field
 
@@ -62,10 +61,10 @@ class StructuresSmrSchema(BaseModel):
     sum_inspection: float | None = Field(alias='sumInspection')
     percent_execDoc: float | None = Field(alias='percentExecDoc')
     sum_exec_doc: float | None = Field(alias='sumExecDoc')
-    date_begin_plan: datetime | None = Field(alias='dateBeginPlan')
-    date_begin_fact: datetime | None = Field(alias='dateBeginFact')
-    date_end_plan: datetime | None = Field(alias='dateEndPlan')
-    date_end_fact: datetime | None = Field(alias='dateEndFact')
+    date_begin_plan: str | None = Field(alias='dateBeginPlan')
+    date_begin_fact: str | None = Field(alias='dateBeginFact')
+    date_end_plan: str | None = Field(alias='dateEndPlan')
+    date_end_fact: str | None = Field(alias='dateEndFact')
     aggregated_jobs_data: AggregatedJobsData | None = Field(alias='aggregatedJobsData')
     path: list[PathItem]
     direction: Direction | None

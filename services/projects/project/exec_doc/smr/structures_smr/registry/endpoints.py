@@ -1,4 +1,5 @@
-from services.projects.project.exec_doc.smr.structures_smr.routes.structure_smr_routes import StructureSmrRoutes
+from services.projects.project.exec_doc.smr.structures_smr.registry.routes. \
+    structure_smr_routes import StructureSmrRoutes
 from config.auth import current_user
 
 
