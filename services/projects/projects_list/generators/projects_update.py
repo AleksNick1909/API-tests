@@ -10,9 +10,16 @@ class UpdateProjectGen:
         self.result['companyId'] = company_id
         return self
 
-    def set_field(self, key: str, value):
-        """Универсальный метод для добавления любого поля"""
-        self.result[key] = value
+    def set_full_name(self, full_name: str):
+        self.result['fullName'] = full_name
+        return self
+
+    def set_short_name(self, short_name: str):
+        self.result['shortName'] = short_name
+        return self
+
+    def set_object_number(self, object_number: str):
+        self.result['objectNumber'] = object_number
         return self
 
     def set_fields(self, **kwargs):

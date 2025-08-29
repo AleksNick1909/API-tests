@@ -1,4 +1,3 @@
-import allure
 from config.base_test import BaseTest
 from config.auth import current_user
 from services.projects.project.exec_doc.smr.structures_smr.registry.fixtures.structure_smr_fixtures import *
@@ -31,8 +30,8 @@ class TestStructuresSmr(BaseTest):
         )
         assert structure_smr.identifier == 'id_1'
         assert structure_smr.cipher == 'Шифр_1'
-        assert structure_smr.representative['id'] == current_user.representative_id
-        assert structure_smr.customer['id'] == current_user.representative_id
+        assert structure_smr.representative.id == current_user.representative_id
+        assert structure_smr.customer.id == current_user.representative_id
 
     @allure.title('Удаление структуры СМР')
     def test_create_and_delete_structures_smr(self):

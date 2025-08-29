@@ -41,6 +41,27 @@ class AggregatedJobsData(BaseModel):
     qty_ks2: float = Field(alias='qtyKs2')
 
 
+class RepresentativeSchema(BaseModel):
+    commission_status: str = Field(alias='commissionStatus')
+    dismissal_date: str | None = Field(alias='dismissalDate')
+    documents_confirms: list | None = Field(alias='documentsConfirms')
+    fio: str
+    id: int
+    name: str
+    partner: Any | None
+    phone: str | None
+    position: str | None
+    user: Any | None
+
+
+class CustomerSchema(BaseModel):
+    id: int = Field(alias='id')
+    name: str
+    fio: str | None
+    partner: Any | None
+    position: str | None
+
+
 class StructuresSmrSchema(BaseModel):
     id: int
     name: str
@@ -48,7 +69,7 @@ class StructuresSmrSchema(BaseModel):
     parent: Any | None
     is_have_children: bool = Field(alias='isHaveChildren')
     is_have_jobs: bool | None = Field(alias='isHaveJobs')
-    representative: Any | None
+    representative: RepresentativeSchema | None
     order: float
     total: float
     total_fact: float = Field(alias='totalFact')
@@ -83,7 +104,7 @@ class StructuresSmrSchema(BaseModel):
     labor_costs_performed: Any | None = Field(alias='laborCostsPerformed')
     percent_ks2: Any | None = Field(alias='percentKs2')
     sum_ls2: Any | None = Field(alias='sumKs2')
-    customer: Any | None
+    customer: CustomerSchema | None
     kit_rd_numbers: Any | None = Field(alias='kitRdNumbers')
     level: Any | None
     level_value: Any | None = Field(alias='levelValue')

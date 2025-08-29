@@ -1,4 +1,3 @@
-from config.auth import current_user
 
 
 class DeleteProjectsGen:
