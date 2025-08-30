@@ -1,3 +1,4 @@
+from config.auth import current_user
 
 
 class UpdateStructureSmrGen:
@@ -5,9 +6,20 @@ class UpdateStructureSmrGen:
     def __init__(self):
         self.result = {}
 
-    def set_field(self, key: str, value):
-        """Универсальный метод для добавления любого поля"""
-        self.result[key] = value
+    def set_identifier(self, identifier: str):
+        self.result['identifier'] = identifier
+        return self
+
+    def set_cipher(self, cipher: str):
+        self.result['cipher'] = cipher
+        return self
+
+    def set_representative_id(self, representative_id: int = current_user.representative_id):
+        self.result['representativeId'] = representative_id
+        return self
+
+    def set_customer_id(self, customer_id: int = current_user.representative_id):
+        self.result['customerId'] = customer_id
         return self
 
     def set_fields(self, **kwargs):
