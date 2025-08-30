@@ -14,4 +14,6 @@ class TestInspectionsSmr(BaseTest):
     @allure.title('Создание инспекции СМР')
     def test_create_inspections_smr(self, fixture_get_types_inspections_smr):
         type_inspection_smr = fixture_get_types_inspections_smr(type_inspection_smr='СК')
-        self.inspections_smr_api.create_inspections_smr_api(type_inspection_smr)
+        print(type_inspection_smr)
+        inspection_smr = self.inspections_smr_api.create_inspections_smr_api(type_inspection_smr)
+        print(inspection_smr)

@@ -1,12 +1,12 @@
 import allure
 from config.base_api import BaseAPI
 
-from services.projects.project.exec_doc.smr.structures_smr.registry. \
-    routes.structure_smr_routes import StructureSmrRoutes
-from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
-    structure_smr_get import GetStructureSmrGen
-from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
-    structure_smr_create import CreateStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.routes.structure_smr_routes import \
+    StructureSmrRoutes
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators.structure_smr_get import \
+    GetStructureSmrGen
+from services.projects.project.exec_doc.smr.structures_smr.registry.generators.structure_smr_create import \
+    CreateStructureSmrGen
 from services.projects.project.exec_doc.smr.structures_smr.registry.generators.structure_smr_delete import \
     DeleteStructureSmrGen
 from services.projects.project.exec_doc.smr.structures_smr.registry.models.model_structures_smr import *
