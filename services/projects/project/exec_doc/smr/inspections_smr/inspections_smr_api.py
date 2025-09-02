@@ -3,7 +3,7 @@ from config.base_api import BaseAPI
 from services.projects.project.exec_doc.smr.inspections_smr.generators.inspections_smr_get import GetInspectionsSmrGen
 from services.projects.project.exec_doc.smr.inspections_smr.generators.inspections_smr_create import \
     CreateInspectionsSmrGen
-from services.projects.project.exec_doc.smr.inspections_smr.routes.inspections_pnr_routes import InspectionsSmrRoutes
+from services.projects.project.exec_doc.smr.inspections_smr.routes.inspections_smr_routes import InspectionsSmrRoutes
 from services.projects.project.exec_doc.smr.inspections_smr.models.inspections_schema import *
 
 

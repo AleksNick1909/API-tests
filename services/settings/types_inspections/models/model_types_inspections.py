@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class TypesInspectionsSmr(BaseModel):
+class TypesInspectionsSchema(BaseModel):
     code: str | None
     control_type: str | None = Field(alias='controlType')
     holder_role: str | None = Field(alias='holderRole')

@@ -39,3 +39,7 @@ class TestProjectsList(BaseTest):
         with allure.step('Удалить проект'):
             body = DeleteProjectsGen().set_selected_ids(project_id).build()
             self.projects_list_api.delete_project(payload=body)
+
+    def test_numerations(self):
+        numerations = self.project_numerations_api.get_numerations_section()
+        print(numerations)
