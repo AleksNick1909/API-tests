@@ -1,4 +1,5 @@
 import allure
+import pytest
 from config.base_test import BaseTest
 
 from services.projects.projects_list.generators.projects_update import UpdateProjectGen
@@ -19,18 +20,46 @@ class TestProjectsList(BaseTest):
         project = self.projects_list_api.create_project()
         assert project.full_name == 'Новый проект'
 
-    @allure.title('Обновление проекта')
-    def test_update_project(self):
-        with allure.step('Изменить данные проекта'):
-            full_name = 'New Project Name'
-            object_number = '2'
-            short_name = 'Sub New Project Name'
-            body = (UpdateProjectGen().set_full_name(full_name).set_object_number(object_number).
-                    set_short_name(short_name).build())
+    # @allure.title('Обновление проекта')
+    # def test_update_project(self):
+    #     with allure.step('Изменить данные проекта'):
+    #         full_name = 'New Project Name'
+    #         object_number = '2'
+    #         short_name = 'Sub New Project Name'
+    #         body = (UpdateProjectGen().set_full_name(full_name).set_object_number(object_number).
+    #                 set_short_name(short_name).build())
+    #         project = self.projects_list_api.update_project(payload=body)
+    #         assert project.full_name == full_name
+    #         assert project.object_number == object_number
+    #         assert project.short_name == short_name
+
+    @pytest.mark.parametrize('field_name, field_value, readable_name', [
+        ('full_name', 'New Project Name', 'Наименование'),
+        ('object_number', '2', 'Номер'),
+        ('short_name', 'Sub New Project Name', 'Наименование краткое')
+    ], ids=['full_name', 'object_number', 'short_name'])
+    def test_update_project_single_field(self, field_name, field_value, readable_name):
+        allure.dynamic.title(f'Обновление поля - "{readable_name}"')
+
+        with allure.step(f'Изменить "{readable_name}" проекта'):
+            update_project_gen = UpdateProjectGen()
+            field_mapping = {
+                'full_name': update_project_gen.set_full_name,
+                'object_number': update_project_gen.set_object_number,
+                'short_name': update_project_gen.set_short_name
+            }
+
+            field_mapping[field_name](field_value)
+            body = update_project_gen.build()
             project = self.projects_list_api.update_project(payload=body)
-            assert project.full_name == full_name
-            assert project.object_number == object_number
-            assert project.short_name == short_name
+
+        with allure.step(f'Проверить, что "{readable_name}" обновилось корректно'):
+            result_mapping = {
+                'full_name': project.full_name,
+                'object_number': project.object_number,
+                'short_name': project.short_name
+            }
+            assert result_mapping[field_name] == field_value
 
     @allure.title('Удаление проекта')
     def test_delete_project(self):

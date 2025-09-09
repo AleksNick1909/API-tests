@@ -23,7 +23,8 @@ class RequestClient:
         if method.upper() != "GET":
             self.helper.attach('request', kwargs["json"])
 
-    def _log_response(self, response: requests.Response, max_expected_time: float = 3.0):
+    @staticmethod
+    def _log_response(response: requests.Response, max_expected_time: float = 3.0):
         http_log = (f'⬅️ HTTP Response: {response.request.method} {response.request.url} - '
                     f'{response.status_code} {response.reason or "OK"}')
         # Время запроса

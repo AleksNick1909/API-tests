@@ -9,7 +9,7 @@ from services.projects.project.exec_doc.smr.inspections_smr.models.inspections_s
 
 class InspectionsSmrAPI(BaseAPI):
 
-    @allure.step(f'Получение списка инспекций СМР')
+    @allure.step('Получение списка инспекций СМР')
     def get_inspections_smr_api(self) -> InspectionsSchema:
         params = GetInspectionsSmrGen().set_page().set_count().build()
         inspections_smr_list = self.client.get(endpoint=InspectionsSmrRoutes.get_inspections_smr_api(),
@@ -17,7 +17,7 @@ class InspectionsSmrAPI(BaseAPI):
                                                params=params)
         return inspections_smr_list
 
-    @allure.step(f'Создание инспекции СМР')
+    @allure.step('Создание инспекции СМР')
     def create_inspections_smr_api(self, type_inspection: int) -> InspectionSchema:
         body = (CreateInspectionsSmrGen().set_order().set_id_numeration().set_type_id(type_inspection).
                 set_user_id().build())
