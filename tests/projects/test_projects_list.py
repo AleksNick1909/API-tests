@@ -37,29 +37,21 @@ class TestProjectsList(BaseTest):
         ('full_name', 'New Project Name', 'Наименование'),
         ('object_number', '2', 'Номер'),
         ('short_name', 'Sub New Project Name', 'Наименование краткое')
-    ], ids=['full_name', 'object_number', 'short_name'])
+    ])
     def test_update_project_single_field(self, field_name, field_value, readable_name):
         allure.dynamic.title(f'Обновление поля - "{readable_name}"')
 
         with allure.step(f'Изменить "{readable_name}" проекта'):
             update_project_gen = UpdateProjectGen()
-            field_mapping = {
-                'full_name': update_project_gen.set_full_name,
-                'object_number': update_project_gen.set_object_number,
-                'short_name': update_project_gen.set_short_name
-            }
+            setter_method = getattr(update_project_gen, f'set_{field_name}')
+            setter_method(field_value)
 
-            field_mapping[field_name](field_value)
             body = update_project_gen.build()
             project = self.projects_list_api.update_project(payload=body)
 
         with allure.step(f'Проверить, что "{readable_name}" обновилось корректно'):
-            result_mapping = {
-                'full_name': project.full_name,
-                'object_number': project.object_number,
-                'short_name': project.short_name
-            }
-            assert result_mapping[field_name] == field_value
+            actual_value = getattr(project, field_name)
+            assert actual_value == field_value
 
     @allure.title('Удаление проекта')
     def test_delete_project(self):
