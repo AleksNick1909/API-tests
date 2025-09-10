@@ -34,6 +34,6 @@ class ProjectListAPI(BaseAPI):
         return project
 
     @allure.step('Удаление проекта')
-    def delete_project(self, payload):
+    def delete_project(self, param):
         self.client.delete(endpoint=ProjectsRoutes.delete_project_api(),
-                           params=payload)
+                           params=param)

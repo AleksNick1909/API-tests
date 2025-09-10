@@ -27,7 +27,7 @@ class ProjectNumerationsAPI(BaseAPI):
             if time.time() - start_time >= max_total_time:
                 break
             response = self.client.get(model=NumerationSectionSchema,
-                                       endpoint=NumerationsRoutes.get_numerations_api(),
+                                       endpoint=NumerationsRoutes.get_numerations_route(),
                                        params=params)
             if response:
                 return response

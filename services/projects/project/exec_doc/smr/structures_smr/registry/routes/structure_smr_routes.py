@@ -10,17 +10,9 @@ class StructureSmrRoutes:
         return structures_smr
 
     @staticmethod
-    def get_structures_smr_api() -> str:
-        return StructureSmrRoutes.structures_smr(project_id=current_user.project_id)
-
-    @staticmethod
-    def create_structures_smr_api() -> str:
+    def structures_smr_route() -> str:
         return StructureSmrRoutes.structures_smr(project_id=current_user.project_id)
 
     @staticmethod
     def update_structures_smr_api(structure_smr_id: int) -> str:
         return f'{StructureSmrRoutes.structures_smr(project_id=current_user.project_id)}/{structure_smr_id}'
-
-    @staticmethod
-    def delete_structures_smr_api() -> str:
-        return StructureSmrRoutes.structures_smr(project_id=current_user.project_id)
