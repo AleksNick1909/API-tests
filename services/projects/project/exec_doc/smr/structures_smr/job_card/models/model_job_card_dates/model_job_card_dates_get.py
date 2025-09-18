@@ -22,7 +22,7 @@ class PlanPeriodItem(BaseModel):
     is_weekend: bool | None
     job_id: int
     measure: str | None = None
-    qty: str | None = None
+    qty: float | None = None
 
 
 class FactPeriodItem(BaseModel):
@@ -64,4 +64,4 @@ class JobDatesSchema(BaseModel):
     qty_fact: int = Field(None, alias='qtyFact')
     qty_plan: int = Field(None, alias='qtyPlan')
     show_all_dates: bool = Field(None, alias='showAllDates')
-    units: str = None
+    units: str | None = None

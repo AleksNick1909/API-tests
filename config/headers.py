@@ -7,7 +7,6 @@ class Headers:
         """Возвращает базовые заголовки с актуальным токеном"""
         access_token = get_access_token()
         return {
-
             "Authorization": f"Bearer {access_token}",
         }
 

@@ -1,9 +1,14 @@
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 class Links:
 
-    environment = os.environ.get('ENV', 'stage')
+    environment = os.environ.get('ENV', 'cloud_dev')  # Принимает 'cloud_dev' если в .env нет нужного окружения
+    # print(f"Environment variable ENV: {os.environ.get('ENV')}")
+    # print(f"Selected environment: {environment}")
 
     HOSTS = {
         'cloud_dev': 'https://aid-dev-new.infra.gk-adept.ru',

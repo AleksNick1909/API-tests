@@ -10,7 +10,7 @@ def class_object_list_client() -> ProjectListAPI:
     return ProjectListAPI()
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='class')
 @allure.step(f'Создание и удаление проекта')
 def function_create_and_delete_project(class_object_list_client: ProjectListAPI, request):
     """

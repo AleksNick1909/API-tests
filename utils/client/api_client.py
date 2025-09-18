@@ -95,8 +95,8 @@ class RequestClient:
         response = self._request("get", endpoint, params=params)
         return self._validate_response(model=model, response=response)
 
-    def post(self, model, endpoint, json=None, files=None) -> BaseModel | list[BaseModel]:
-        response = self._request("post", endpoint, json=json, files=files)
+    def post(self, model, endpoint, json=None, files=None, params=None) -> BaseModel | list[BaseModel]:
+        response = self._request("post", endpoint, json=json, files=files, params=params)
         return self._validate_response(model=model, response=response)
 
     def patch(self, model, endpoint, json) -> BaseModel | list[BaseModel]:

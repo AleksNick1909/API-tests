@@ -43,7 +43,6 @@ def _get_access_token():
     token_resp = requests.post(Links.TOKEN, json=body, verify=False, timeout=30)
     token_resp.raise_for_status()
     token_data = token_resp.json()
-
     access_token = token_data["access_token"]
     user_id = token_data["user_id"]
 

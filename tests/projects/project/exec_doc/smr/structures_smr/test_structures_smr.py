@@ -26,9 +26,9 @@ class TestStructuresSmr(BaseTest):
         print(structures_smr)
 
     @allure.title('Обновление раздела в структуре СМР')
-    def test_update_structures_smr(self, ficture_create_and_delete_structures_smr):
+    def test_update_structures_smr(self, fixture_create_and_delete_structures_smr):
         with allure.step('Создать новый раздел'):
-            new_structure_smr = ficture_create_and_delete_structures_smr
+            new_structure_smr = fixture_create_and_delete_structures_smr
         with allure.step('Обновить данные раздела'):
             fild_identifier = 'id_1'
             fild_cipher = 'Шифр_1'
@@ -43,9 +43,9 @@ class TestStructuresSmr(BaseTest):
             assert structure_smr.customer.id == current_user.representative_id
 
     @allure.title('Создание работы в структуре СМР')
-    def test_create_job_in_structures_smr(self, ficture_create_and_delete_structures_smr):
+    def test_create_job_in_structures_smr(self, fixture_create_and_delete_structures_smr):
         with allure.step('Создать новый раздел в структуре СМР'):
-            new_structure_smr = ficture_create_and_delete_structures_smr.id
+            new_structure_smr = fixture_create_and_delete_structures_smr.id
         with allure.step('Создать работу внутри раздела'):
             body = CreateJobGen().set_structure_smr_id(new_structure_smr).set_user_id().build()
             job_id = self.structures_smr_api.create_job_in_structures_smr_api(payload=body).id
@@ -54,9 +54,9 @@ class TestStructuresSmr(BaseTest):
             assert today_date in job.date
 
     @allure.title('Обновление данных работы в структуре СМР')
-    def test_update_job_in_structure_smr(self, ficture_create_job_in_structure_smr):
+    def test_update_job_in_structure_smr(self, fixture_create_job_in_structure_smr):
         with allure.step('Создать новый раздел, внутри раздела создать работу'):
-            job = ficture_create_job_in_structure_smr
+            job = fixture_create_job_in_structure_smr
         with allure.step('Обновить данные работы'):
             fild_identifier = 'id_1'
             fild_cipher = 'Шифр_1'

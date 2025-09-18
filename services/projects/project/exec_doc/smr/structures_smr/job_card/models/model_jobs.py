@@ -111,11 +111,11 @@ class JobsCardSchema(BaseModel):
     ks2: list[Any]
     labor_costs: float | None = Field(alias='laborCosts')
     labor_costs_per_unit: float | None = Field(alias='laborCostsPerUnit')
-    labor_costs_performed: str | None = Field(alias='laborCostsPerformed')
+    labor_costs_performed: float | None = Field(alias='laborCostsPerformed')
     lot_plan_qty: str | None = Field(alias='lotPlanQty')
     lot_total_qty: str | None = Field(alias='lotTotalQty')
     lots: list[Any]
-    name: str
+    name: str | None
     note: str | None
     number: str | None
     number_plan: str | None
@@ -129,7 +129,7 @@ class JobsCardSchema(BaseModel):
     performed_fact: str | None = Field(alias='performedFact')
     plan_dates: list[Any]
     plan_name: str | None = Field(alias='planName')
-    price_fact: str | None
+    price_fact: int | str | None
     price_plan: str | int | None
     qty_by_delivery: str | None = Field(alias='qtyByDelivery')
     qty_contract: int | None

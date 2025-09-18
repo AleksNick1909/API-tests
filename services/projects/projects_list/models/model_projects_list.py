@@ -75,7 +75,7 @@ class ConstructionProjectSchema(BaseModel):
     life_cycle_status: dict | None = Field(None, alias='lifeCycleStatus')
     location: str | None = None
     location_address: str | None = Field(None, alias='locationAddress')
-    media_cover: str | None = Field(None, alias='mediaCover')
+    media_cover: dict | None = Field(None, alias='mediaCover')
     object_budget: str | None = Field(None, alias='objectBudget')
     object_budget_type: str | None = Field(None, alias='objectBudgetType')
     object_code: str | None = Field(None, alias='objectCode')
