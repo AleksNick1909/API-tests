@@ -1,4 +1,4 @@
-FROM python:3.14-alpine3.22
+FROM python:3.13.3-alpine3.22
 
 # Установка Allure
 RUN apk update && \
