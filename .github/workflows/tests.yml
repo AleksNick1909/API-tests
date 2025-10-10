@@ -67,10 +67,6 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
-      - name: Debug container environment
-        run: |
-          docker compose run tests env | grep -E "(ENV|LOGIN|PASSWORD|CLIENT)"
-
       # Запуск тестов (скорее всего нужно добавить переменные логин и пароль)
       - name: Run API tests via docker
         env:
@@ -96,6 +92,18 @@ jobs:
         run: |
           docker compose up report --build
 
+      # проверка отчета
+      - name: Check Allure report contents
+        run: |
+          echo "=== Allure report structure ==="
+          find allure-report -type f -name "*.html" -o -name "*.json" -o -name "*.js" | head -20
+          
+          echo "=== Index.html exists? ==="
+          ls -la allure-report/index.html || echo "No index.html"
+          
+          echo "=== Report size ==="
+          du -sh allure-report/ || echo "Cannot check size"
+
       # Шаг 6 - Деплой на gh-pages
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -103,4 +111,5 @@ jobs:
           token: ${{ secrets.CI_TOKEN }}
           branch: gh-pages
           folder: allure-report
-          clean: false
+          clean: true
+          single-commit: true
