@@ -12,7 +12,7 @@ services:
       STAGE: ${STAGE}
       THREADS: ${THREADS:-3}
       MARKER: ${MARKER:-all}
-    command: /bin/sh -c "pytest -sv -o log_cli=true -n=$$THREADS -m=$$MARKER --alluredir=allure-results"
+    command: /bin/sh -c "MARKER_CMD=''; if [ \"$$MARKER\" != \"all\" ]; then MARKER_CMD=\"-m=$$MARKER\"; fi; pytest -sv -o log_cli=true -n=$$THREADS $$MARKER_CMD --alluredir=allure-results"
     tty: true
 
   report:
