@@ -67,6 +67,10 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
+      - name: Debug container environment
+        run: |
+          docker compose run tests env | grep -E "(ENV|LOGIN|PASSWORD|CLIENT)"
+
       # Запуск тестов (скорее всего нужно добавить переменные логин и пароль)
       - name: Run API tests via docker
         env:
