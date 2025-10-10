@@ -3,7 +3,6 @@ from config.auth import current_user
 
 from services.projects.project.exec_doc.smr.structures_smr.registry.generators. \
     structure_smr_update import UpdateStructureSmrGen
-from services.projects.project.exec_doc.smr.structures_smr.registry.generators.jobs_update import UpdateJobGen
 from services.projects.project.exec_doc.smr.structures_smr.registry.fixtures.structure_smr_fixtures import *
 from datetime import date
 

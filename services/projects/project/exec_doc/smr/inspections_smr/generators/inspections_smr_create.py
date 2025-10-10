@@ -7,10 +7,13 @@ class CreateInspectionsSmrGen:
         self.result = []
         self.inspection = {}
         self.settings_numeration = {}
-        self.parts = []
 
     def set_id_numeration(self, id_numeration=0):
         self.settings_numeration['id'] = id_numeration
+        return self
+
+    def set_area_id(self, area_id=0):
+        self.settings_numeration['areaId'] = area_id
         return self
 
     def set_order(self, order=0):
@@ -26,7 +29,6 @@ class CreateInspectionsSmrGen:
         return self
 
     def build(self):
-        self.settings_numeration['parts'] = self.parts
         self.inspection['settings_numeration'] = self.settings_numeration
         self.result.append(self.inspection)
         request = self.result

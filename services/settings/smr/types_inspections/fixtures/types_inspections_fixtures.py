@@ -1,6 +1,6 @@
 import pytest
 import allure
-from services.settings.types_inspections.types_inspections_api import TypesInspectionsApi
+from services.settings.smr.types_inspections.types_inspections_api import TypesInspectionsApi
 
 
 @pytest.fixture(scope='class')
@@ -20,5 +20,4 @@ def fixture_get_types_inspections(class_type_inspections_client: TypesInspection
             if inspection.name == type_inspection:
                 return inspection.id
         raise ValueError(f"Тип инспекции '{type_inspection}' не найден")
-
     return _fixture_get_types_inspections

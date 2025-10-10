@@ -6,7 +6,7 @@ from services.projects.project.exec_doc.smr.inspections_smr.inspections_smr_api 
 from services.projects.project.settings.numerations.numeration_api import ProjectNumerationsAPI
 from services.projects.project.dashboards.dashboards_api import DashboardsAPI
 
-from services.settings.types_inspections.types_inspections_api import TypesInspectionsApi
+from services.settings.smr.types_inspections.types_inspections_api import TypesInspectionsApi
 
 
 @pytest.mark.usefixtures('function_create_and_delete_project')

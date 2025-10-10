@@ -1,7 +1,7 @@
 import allure
 from config.base_api import BaseAPI
-from services.settings.types_inspections.routes.types_inspections_routes import TypesInspectionsRoutes
-from services.settings.types_inspections.models.model_types_inspections import *
+from services.settings.smr.types_inspections.routes.types_inspections_routes import TypesInspectionsRoutes
+from services.settings.smr.types_inspections.models.model_types_inspections import *
 
 
 class TypesInspectionsApi(BaseAPI):

@@ -26,7 +26,7 @@ class PlanPeriodItem(BaseModel):
 
 
 class FactPeriodItem(BaseModel):
-    completion_percent: str | None = Field(None, alias='completionPercent')
+    completion_percent: int | None = Field(None, alias='completionPercent')
     date: str
     date_id: int
     fact_confirmer: str | None = Field(None, alias='factConfirmer')

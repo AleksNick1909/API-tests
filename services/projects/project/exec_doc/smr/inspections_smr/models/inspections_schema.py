@@ -90,89 +90,97 @@ class TypeOfWorkSchema(BaseModel):
 class InspectionTypeSchema(BaseModel):
     id: int
     name: str
-    code: str | None
+    code: dict | None = None
     order: float
     control_type: str | None = Field(alias='controlType')
     inspection_status: str | None = Field(alias='inspectionStatus')
 
 
 class InspectionSchema(BaseModel):
-    id: int
-    qty: str | None = None
-    location: str | None = None
-    control_scope_text: str | None = Field(None, alias='controlScopeText')
-    status: StatusInspectionSchema | None = None
-    planned_date: str | None = None
-    registration_date: str | None = None
-    registration_number: str | None = None
-    inspection_type: InspectionTypeSchema = None
-    contractors: list | None = None
-    customers: list | None = None
-    supervisors: list | None = None
-    structure: dict | None = None
-    journal: JournalSchema | None = None
-    journal_special: int | None = None
-    entrance_journal: dict | None = Field(None, alias='entranceJournal')
-    entrance_journal_act: dict | None = Field(None, alias='entranceJournalAct')
-    representatives: list | None = None
-    control_method: list | None = None
-    control_scope: str | None = None
-    zone: int | None = None
-    code: int | None = None
-    system: str | None = None
-    other: str | None = None
-    parent_inspection: dict | None = None
-    order: float | None = None
     act_compositions: int | None = Field(None, alias='actCompositions')
-    auto_action: int | None = Field(None, alias='autoAction')
-    repeat_inspection: dict | None = Field(None, alias='repeatInspection')
-    responsible_registration_contractor: dict | None = Field(None, alias='responsibleRegistrationContractor')
-    responsible_registration_customer: dict | None = (Field(None, alias='responsibleRegistrationCustomer'))
-    notification_date: str | None = Field(None, alias='notificationDate')
-    rejection_date: str | None = Field(None, alias='rejectionDate')
-    is_registered: bool | None = Field(None, alias='isRegistered')
-    comment_registration: str | None = Field(None, alias='commentRegistration')
-    exec_doc: dict | None = Field(None, alias='execDoc')
-    direction: dict | None = None
-    directions: dict | None = None
-    type_of_work: TypeOfWorkSchema | None = Field(None, alias='typeOfWork')
-    types_of_work: list = Field(None, alias='typesOfWork')
-    jobs_string: str = Field(None, alias='jobsString')
-    materials_string: str = Field(None, alias='materialsString')
-    jobs_volume_accept_total: int = Field(None, alias='jobsVolumeAcceptTotal')
-    control_stage_index: int | None = Field(None, alias='controlStageIndex')
-    control_stage_name: str = Field(None, alias='controlStageName')
-    inspection_welding: InspectionWeldingSchema | None = Field(None, alias='inspectionWelding')
-    registration_verified_date: str | None = Field(None, alias='registrationVerifiedDate')
-    is_blocked: bool | None = Field(None, alias='isBlocked')
-    block_level: int | None = Field(None, alias='blockLevel')
-    is_negative_blocked: bool | None = Field(None, alias='isNegativeBlocked')
-    plan_check_number: int | None = Field(None, alias='planCheckNumber')
-    auto_add_job_in_journal: bool | None = Field(None, alias='autoAddJobInJournal')
-    typical_itp: str | None = Field(None, alias='typicalITP')
-    fact_date: str | None = Field(None, alias='factDate')
-    man_hours_duration: int = Field(None, alias='manHoursDuration')
-    notification_number: str | None = Field(None, alias='notificationNumber')
-    files: list | None = None
     atg: str | None = None
     author_supervisions: list | None = Field(None, alias='authorSupervisions')
+    auto_action: int | None = Field(None, alias='autoAction')
+    auto_add_job_in_journal: bool | None = Field(None, alias='autoAddJobInJournal')
+    block_level: int | None = Field(None, alias='blockLevel')
+    code: int | None = None
+    comment_registration: str | None = Field(None, alias='commentRegistration')
+    construction: int | None = None
+    contractor_number: int | None = Field(None, alias='contractorNumber')
+    contractor_text: str | None = Field(None, alias='contractorText')
+    contractors: list | None = None
+    control_method: list | None = None
+    control_scope: str | None = None
+    control_scope_text: str | None = Field(None, alias='controlScopeText')
+    control_stage_index: int | None = Field(None, alias='controlStageIndex')
+    control_stage_name: str = Field(None, alias='controlStageName')
+    created_at: str | None = Field(None, alias='createdAt')  # Добавлено
+    customer_number: int | None = Field(None, alias='customerNumber')
+    customer_text: str | None = Field(None, alias='customerText')
+    customers: list | None = None
+    description: str | None = None
+    direction: dict | None = None
+    directions: list | None = None
+    entrance_journal: dict | None = Field(None, alias='entranceJournal')
+    entrance_journal_act: dict | None = Field(None, alias='entranceJournalAct')
+    exec_doc: dict | None = Field(None, alias='execDoc')
+    fact_date: str | None = Field(None, alias='factDate')
+    files: list | None = None
+    id: int
+    inspection_type: InspectionTypeSchema = None
+    inspection_welding: InspectionWeldingSchema | None = Field(None, alias='inspectionWelding')
     is_author_supervision_enable: bool | None = Field(None, alias='isAuthorSupervisionEnable')
+    is_blocked: bool | None = Field(None, alias='isBlocked')
+    is_empty_volume_accept: bool = Field(None, alias='isEmptyVolumeAccept')
+    is_negative_blocked: bool | None = Field(None, alias='isNegativeBlocked')
+    is_registered: bool | None = Field(None, alias='isRegistered')
+    is_representative_statuses_blocked: bool | None = Field(None, alias='isRepresentativeStatusesBlocked')
+    jobs_string: str = Field(None, alias='jobsString')
+    jobs_volume_accept_total: int = Field(None, alias='jobsVolumeAcceptTotal')
+    journal: JournalSchema | None = None
+    journal_special: int | None = None
+    line: str | None = None
+    link: str | None = None
+    location: str | None = None
+    man_hours_duration: int = Field(None, alias='manHoursDuration')
+    materials_string: str = Field(None, alias='materialsString')
+    notification_date: str | None = Field(None, alias='notificationDate')
+    notification_number: str | None = Field(None, alias='notificationNumber')
+    order: float | None = None
+    other: str | None = None
+    parent_inspection: dict | None = None
+    participant_text: str | None = Field(None, alias='participantText')
+    plan_check_number: int | None = Field(None, alias='planCheckNumber')
+    planned_date: str | None = None
+    planned_date_begin: str | None = Field(None, alias='plannedDateBegin')
+    planned_date_end: str | None = Field(None, alias='plannedDateEnd')
+    qty: str | None = None
+    registration_date: str | None = None
+    registration_number: str | None = None
+    registration_verified_date: str | None = Field(None, alias='registrationVerifiedDate')
+    rejection_date: str | None = Field(None, alias='rejectionDate')
+    repeat_inspection: dict | None = Field(None, alias='repeatInspection')
+    representatives: list | None = None
+    responsible_registration_contractor: dict | None = Field(None, alias='responsibleRegistrationContractor')
+    responsible_registration_customer: dict | None = Field(None, alias='responsibleRegistrationCustomer')
+    status: StatusInspectionSchema | None = None
+    structure: dict | None = None
+    subsystem_text: str | None = Field(None, alias='subsystemText')
+    supervisor_text: str | None = Field(None, alias='supervisorText')
+    supervisors: list | None = None
+    system: str | None = None
+    system_text: str | None = Field(None, alias='systemText')
     title: str | None = None
     subtitle: str | None = None
-    construction: int | None = None
-    line: str | None = None
-    system_text: str | None = Field(None, alias='systemText')
-    subsystem_text: str | None = Field(None, alias='subsystemText')
-    contractor_text: str | None = Field(None, alias='contractorText')
-    customer_text: str | None = Field(None, alias='customerText')
-    supervisor_text: str | None = Field(None, alias='NonesupervisorText')
-    participant_text: str | None = Field(None, alias='participantText')
-    is_representative_statuses_blocked: bool | None = Field(None, alias='isRepresentativeStatusesBlocked')
-    link: str | None = None
-    contractor_number: int | None = Field(None, alias='contractorNumber')
-    customer_number: int | None = Field(None, alias='customerNumber')
+    title_structure_levels: list | None = Field(None, alias='titleStructureLevels')
+    title_smr_level_value: str | None = Field(None, alias='titleSmrLevelValue')
+    typical_itp: str | None = Field(None, alias='typicalITP')
+    type_of_work: TypeOfWorkSchema | None = Field(None, alias='typeOfWork')
+    types_of_work: list = Field(None, alias='typesOfWork')
     was_restarted: bool = Field(None, alias='wasRestarted')
-    is_empty_volume_accept: bool = Field(None, alias='isEmptyVolumeAccept')
+    zone: int | None = None
+    zone_structure_level: str | None = Field(None, alias='zoneStructureLevel')
+    zone_smr_level_value: str | None = Field(None, alias='zoneSmrLevelValue')
 
 
 class InspectionsSchema(BaseModel):

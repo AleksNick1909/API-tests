@@ -77,3 +77,4 @@ class DashboardsAPI(BaseAPI):
                                         f'{DashboardsRoutes.executive_documentation}',
                                model=ExecDocDashboardSchema,
                                params=params)
+
