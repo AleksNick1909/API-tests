@@ -1,0 +1,2 @@
+INFO     api_logger:api_client.py:22 ➡️ PATCH - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions/3054
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PATCH https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions/3054 - 200 OK (Time: 0.243s)

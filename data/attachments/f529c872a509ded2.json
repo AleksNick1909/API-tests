@@ -1,0 +1,11 @@
+{
+    "startSmrPlan": null,
+    "startSmrFact": null,
+    "startPnrPlan": null,
+    "startPnrFact": null,
+    "costSmr": null,
+    "contributedSmr": 0,
+    "doneSmr": 0,
+    "signedExecDoc": 0,
+    "signedKC": 0
+}
