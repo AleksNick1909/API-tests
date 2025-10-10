@@ -92,6 +92,15 @@ jobs:
         run: |
           docker compose up report --build
 
+      - name: Verify Allure report
+        run: |
+          echo "✅ Allure report generated successfully"
+          echo "📊 Report size: $(du -sh allure-report | cut -f1)"
+          echo "📁 Files count: $(find allure-report -type f | wc -l)"
+          echo "=== Important files ==="
+          ls -la allure-report/index.html
+          ls -la allure-report/data/suites.json
+
       # проверка отчета
       - name: Check Allure report contents
         run: |
@@ -112,10 +121,3 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
-          single-commit: false
-
-      - name: Verify deployment
-        run: |
-          echo "✅ Allure report generated successfully"
-          echo "📊 Report size: $(du -sh allure-report | cut -f1)"
-          echo "📁 Files count: $(find allure-report -type f | wc -l)"
