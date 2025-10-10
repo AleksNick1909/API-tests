@@ -98,18 +98,6 @@ jobs:
         run: |
           docker compose up report --build
 
-      # проверка отчета
-      - name: Check Allure report contents
-        run: |
-          echo "=== Allure report structure ==="
-          find allure-report -type f -name "*.html" -o -name "*.json" -o -name "*.js" | head -20
-          
-          echo "=== Index.html exists? ==="
-          ls -la allure-report/index.html || echo "No index.html"
-          
-          echo "=== Report size ==="
-          du -sh allure-report/ || echo "Cannot check size"
-
       # Шаг 6 - Деплой на gh-pages
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -118,14 +106,3 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
-
-      - name: Verify history preservation
-        run: |
-          echo "=== Checking history in deployed report ==="
-          # Проверяем, что история сохранилась в gh-pages
-          if [ -d "allure-report/history" ]; then
-            echo "✅ History preserved in new report"
-            ls -la allure-report/history/
-          else
-            echo "❌ No history in generated report"
-          fi
