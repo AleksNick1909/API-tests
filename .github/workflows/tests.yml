@@ -55,7 +55,7 @@ jobs:
         env:
           STAGE: ${{ secrets.STAGE }}
         run: |
-          docker-compose up tests
+          docker compose up tests
 
       # Шаг 4 - Копирование истории
       - name: Copy Allure history
