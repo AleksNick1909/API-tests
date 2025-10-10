@@ -78,6 +78,7 @@ jobs:
           MARKER: ${{ github.event.inputs.MARKER }}
           THREADS: ${{ github.event.inputs.THREADS }}
         run: |
+          docker compose build --no-cache tests
           docker compose up tests --build --exit-code-from tests
 
       # Шаг 4 - Копирование истории
