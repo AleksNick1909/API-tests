@@ -1,10 +1,10 @@
 {
     "data": {
-        "id": 3019,
+        "id": 3021,
         "authorId": 247,
         "authorPartnerId": 174,
         "companyId": 8,
-        "createdAt": "2025-10-10T17:58:42.000000Z",
+        "createdAt": "2025-10-10T18:04:25.000000Z",
         "folder": null,
         "order": 0.125,
         "isFavorite": false,
@@ -67,7 +67,7 @@
         "supportNumber": null,
         "identifierOkc": null,
         "identifierGk": null,
-        "uuid": "7cca8d79-8216-4a88-bbcb-3fc7312f6af6",
+        "uuid": "9a0d5089-17f3-4bb4-a9a4-fce1dd24ccd5",
         "documentPacks": null,
         "smrData": null,
         "mediaCover": null,
