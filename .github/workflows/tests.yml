@@ -52,11 +52,26 @@ jobs:
           echo "Commit=${{ github.sha }}" >> allure-results/environment.properties
           echo "Environment=${{ github.event.inputs.ENV }}" >> allure-results/environment.properties
 
+      - name: Create .env file with credentials only
+        run: |
+          cat > .env << EOF
+          ENV=${{ github.event.inputs.ENV }}
+          DEV_LOGIN=${{ secrets.DEV_LOGIN }}
+          DEV_PASSWORD=${{ secrets.DEV_PASSWORD }}
+          DEV_CLIENT_ID=${{ secrets.DEV_CLIENT_ID }}
+          CLOUD_LOGIN=${{ secrets.CLOUD_LOGIN }}
+          CLOUD_PASSWORD=${{ secrets.CLOUD_PASSWORD }}
+          CLOUD_CLIENT_ID=${{ secrets.CLOUD_CLIENT_ID }}
+          STAGE_LOGIN=${{ secrets.STAGE_LOGIN }}
+          STAGE_PASSWORD=${{ secrets.STAGE_PASSWORD }}
+          STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
+          EOF
+
       # Запуск тестов (скорее всего нужно добавить переменные логин и пароль)
       - name: Run API tests via docker
         env:
           STAGE: ${{ secrets.STAGE }}
-          PYTEST_MARKER: ${{ github.event.inputs.MARKER }}
+          MARKER: ${{ github.event.inputs.MARKER }}
           THREADS: ${{ github.event.inputs.THREADS }}
         run: |
           docker compose up tests --build --exit-code-from tests

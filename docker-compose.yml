@@ -6,10 +6,13 @@ services:
       dockerfile: Dockerfile
     volumes:
       - .:/usr/workspace
+    env_file:
+      - .env
     environment:
       STAGE: ${STAGE}
       THREADS: ${THREADS:-3}
-    command: /bin/sh -c "STAGE=$$STAGE pytest -sv -o log_cli=true -n=$$THREADS -m=$$MARKER --alluredir=allure-results"
+      MARKER: ${MARKER:-smoke}
+    command: /bin/sh -c "pytest -sv -o log_cli=true -n=$$THREADS -m=$$MARKER --alluredir=allure-results"
     tty: true
 
   report:
