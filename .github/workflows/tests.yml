@@ -1,5 +1,5 @@
 name: API tests
-run-name: Test ${{ github.event.inputs.ENV }} | ${{ github.event.inputs.MARKER }} marker | ${{ github.event.inputs.THREADS }} treads
+run-name: Test ${{ github.event.inputs.ENV }} | ${{ github.event.inputs.MARKER }} marker | ${{ github.event.inputs.THREADS }} threads
 
 on:
   workflow_dispatch:
@@ -33,7 +33,7 @@ on:
 jobs:
   api-tests:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.ENV }}
+    environment: ${{ github.event.inputs.ENV }}
 
     steps:
       # Клонируем репозиторий
@@ -45,8 +45,8 @@ jobs:
           ref: gh-pages
           path: ./.github/gh-pages
 
-      # Подготовка environment.properties
-      - name: Prepare Allure environment
+      # Подготовка Allure environment и истории ДО тестов
+      - name: Prepare Allure environment and history
         run: |
           mkdir -p allure-results
           echo "Branch=${{ github.ref_name }}" > allure-results/environment.properties
@@ -58,13 +58,14 @@ jobs:
           if [ -d "./.github/gh-pages/history" ]; then
             cp -R ./.github/gh-pages/history/* allure-results/history/
             echo "✅ History copied from previous report"
-            ls -la allure-results/history/
+            echo "=== History files ==="
+            ls -la allure-results/history/ | head -10
           else
             echo "⚠️ No history found - first run"
           fi
 
       # Создание .env файла
-      - name: Create .env file with credentials only
+      - name: Create .env file with credentials
         run: |
           cat > .env << EOF
           ENV=${{ github.event.inputs.ENV }}
@@ -89,23 +90,21 @@ jobs:
           docker compose build --no-cache tests
           docker compose up tests --exit-code-from tests
 
-      # Шаг 5 - Генерация отчета
+      # Генерация отчета
       - name: Generate Allure-report
-        env:
-          STAGE: ${{ secrets.STAGE }}
         run: |
+          docker compose build report
           docker compose up report
 
       # Проверка отчета
       - name: Verify Allure report
         run: |
-          echo "✅ Allure report generated successfully"
+          echo "✅ Allure report generated"
           echo "📊 Report size: $(du -sh allure-report | cut -f1)"
-          echo "📁 Files count: $(find allure-report -type f | wc -l)"
           echo "=== History in report ==="
-          ls -la allure-report/history/ || echo "No history in report"
+          ls -la allure-report/history/ | head -10 || echo "No history in report"
 
-      # Шаг 6 - Деплой на gh-pages
+      # Деплой на gh-pages
       - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
