@@ -11,10 +11,12 @@ from services.projects.projects_list.generators.projects_delete import DeletePro
 @allure.feature('Реестр проектов')
 class TestProjectsList(BaseTest):
 
+    @pytest.mark.smoke
     @allure.title('Получение списка проектов')
     def test_get_projects_list(self):
         self.projects_list_api.get_projects_list()
 
+    @pytest.mark.smoke
     @allure.title('Создание и удаление проекта')
     def test_create_and_delete_project(self):
         with allure.step('Создать новый проект'):
@@ -24,6 +26,7 @@ class TestProjectsList(BaseTest):
             param = DeleteProjectsGen().set_selected_ids(project.id).build()
             self.projects_list_api.delete_project(param=param)
 
+    @pytest.mark.smoke
     @pytest.mark.parametrize('field_name, field_value, readable_name', [
         ('full_name', 'New Project Name', 'Наименование'),
         ('object_number', '2', 'Номер'),

@@ -1,0 +1,23 @@
+services:
+  tests:
+    image: api_tests:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/workspace
+    environment:
+      STAGE: ${STAGE}
+      THREADS: ${THREADS:-3}
+    command: /bin/sh -c "STAGE=$$STAGE pytest -sv -o log_cli=true -n=$$THREADS -m=$$MARKER --alluredir=allure-results"
+    tty: true
+
+  report:
+    image: api_tests:v1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/workspace
+    command: /bin/sh -c "ls -la && allure generate allure-results --clean -o allure-report"
+    working_dir: /usr/workspace
