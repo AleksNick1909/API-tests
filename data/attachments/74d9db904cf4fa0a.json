@@ -3,11 +3,11 @@
         "folders": [],
         "constructions": [
             {
-                "id": 3022,
+                "id": 3024,
                 "authorId": 247,
                 "authorPartnerId": 174,
                 "companyId": 8,
-                "createdAt": "2025-10-10T18:07:14.000000Z",
+                "createdAt": "2025-10-10T18:17:44.000000Z",
                 "folder": null,
                 "order": 0.25,
                 "isFavorite": false,
@@ -70,7 +70,7 @@
                 "supportNumber": null,
                 "identifierOkc": null,
                 "identifierGk": null,
-                "uuid": "c850375b-acc7-4f4b-b836-dc9127b9e1bd",
+                "uuid": "526bb14d-09ec-485c-8c13-3462cfc064a7",
                 "documentPacks": null,
                 "smrData": null,
                 "mediaCover": null,

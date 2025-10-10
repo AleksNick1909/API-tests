@@ -1,12 +1,12 @@
 {
     "data": {
-        "id": 3023,
+        "id": 3024,
         "authorId": 247,
         "authorPartnerId": 174,
         "companyId": 8,
-        "createdAt": "2025-10-10T18:07:15.000000Z",
+        "createdAt": "2025-10-10T18:17:44.000000Z",
         "folder": null,
-        "order": 0.125,
+        "order": 0.25,
         "isFavorite": false,
         "lifeCycleStatus": null,
         "lifeCycleStage": null,
@@ -34,7 +34,7 @@
         "contractorsPnr": null,
         "exploitingOrganizations": null,
         "generalContractor": null,
-        "fullName": "\u041d\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442",
+        "fullName": "New Project Name",
         "shortName": "\u041d\u043e\u0432\u044b\u0439 \u043f\u0440\u043e\u0435\u043a\u0442",
         "objectNumber": null,
         "objectCode": null,
@@ -67,7 +67,7 @@
         "supportNumber": null,
         "identifierOkc": null,
         "identifierGk": null,
-        "uuid": "5c62df5e-a6c2-4933-8d62-4970937396a3",
+        "uuid": "526bb14d-09ec-485c-8c13-3462cfc064a7",
         "documentPacks": null,
         "smrData": null,
         "mediaCover": null,
@@ -87,7 +87,7 @@
         "projectComment": null,
         "landPlotComment": null,
         "objectIntegration": null,
-        "budgetQueues": null,
+        "budgetQueues": [],
         "isBudgetQueuesEditable": false
     }
 }
