@@ -13,9 +13,10 @@ on:
       MARKER:
         description: "Select pytest marker"
         required: true
-        default: "smoke"
+        default: "all"
         type: choice
         options:
+          - all
           - smoke
           - regression
 
@@ -52,6 +53,7 @@ jobs:
           echo "Commit=${{ github.sha }}" >> allure-results/environment.properties
           echo "Environment=${{ github.event.inputs.ENV }}" >> allure-results/environment.properties
 
+      # Создание .env файла
       - name: Create .env file with credentials only
         run: |
           cat > .env << EOF
@@ -67,7 +69,7 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
-      # Запуск тестов (скорее всего нужно добавить переменные логин и пароль)
+      # Запуск тестов
       - name: Run API tests via docker
         env:
           STAGE: ${{ secrets.STAGE }}
@@ -83,6 +85,10 @@ jobs:
           mkdir -p allure-results/history
           if [ -d "./.github/gh-pages/history" ]; then
             cp -R ./.github/gh-pages/history/* allure-results/history/
+            echo "✅ History copied from previous report"
+          else
+            echo "⚠️ No history found - first run"
+            mkdir -p allure-results/history
           fi
 
       # Шаг 5 - Генерация отчета
@@ -91,15 +97,6 @@ jobs:
           STAGE: ${{ secrets.STAGE }}
         run: |
           docker compose up report --build
-
-      - name: Verify Allure report
-        run: |
-          echo "✅ Allure report generated successfully"
-          echo "📊 Report size: $(du -sh allure-report | cut -f1)"
-          echo "📁 Files count: $(find allure-report -type f | wc -l)"
-          echo "=== Important files ==="
-          ls -la allure-report/index.html
-          ls -la allure-report/data/suites.json
 
       # проверка отчета
       - name: Check Allure report contents
@@ -121,3 +118,14 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
+
+      - name: Verify history preservation
+        run: |
+          echo "=== Checking history in deployed report ==="
+          # Проверяем, что история сохранилась в gh-pages
+          if [ -d "allure-report/history" ]; then
+            echo "✅ History preserved in new report"
+            ls -la allure-report/history/
+          else
+            echo "❌ No history in generated report"
+          fi

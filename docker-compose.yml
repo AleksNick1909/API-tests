@@ -11,7 +11,7 @@ services:
     environment:
       STAGE: ${STAGE}
       THREADS: ${THREADS:-3}
-      MARKER: ${MARKER:-smoke}
+      MARKER: ${MARKER:-all}
     command: /bin/sh -c "pytest -sv -o log_cli=true -n=$$THREADS -m=$$MARKER --alluredir=allure-results"
     tty: true
 
