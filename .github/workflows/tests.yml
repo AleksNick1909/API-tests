@@ -77,7 +77,7 @@ jobs:
           THREADS: ${{ github.event.inputs.THREADS }}
         run: |
           docker compose build --no-cache tests
-          docker compose up tests
+          docker compose up tests --build --exit-code-from tests
 
       # Шаг 4 - Копирование истории
       - name: Copy Allure history
@@ -96,7 +96,7 @@ jobs:
         env:
           STAGE: ${{ secrets.STAGE }}
         run: |
-          docker compose up report
+          docker compose up report --build
 
       # Шаг 6 - Деплой на gh-pages
       - name: Deploy to Github Pages
@@ -105,4 +105,4 @@ jobs:
           token: ${{ secrets.CI_TOKEN }}
           branch: gh-pages
           folder: allure-report
-          clean: false
+          clean: true
