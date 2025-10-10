@@ -6,6 +6,5 @@ __pycache__/
 .env
 config/.data_current_user.json
 utils/logger/logs/api_requests.log
-config/credentials.py
 report
 allure-results
