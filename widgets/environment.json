@@ -1,10 +1,1 @@
-[ {
-  "values" : [ "main" ],
-  "name" : "Branch"
-}, {
-  "values" : [ "53e43da355018e1540a89eefc7c8216bcd3e597a" ],
-  "name" : "Commit"
-}, {
-  "values" : [ "cloud_dev" ],
-  "name" : "Environment"
-} ]
+[{"values":["main"],"name":"Branch"},{"values":["6f9f591a3f1db7ead21fa35bb9ebed8eb037dda0"],"name":"Commit"},{"values":["cloud_dev"],"name":"Environment"}]

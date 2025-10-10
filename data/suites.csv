@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Oct 10 14:58:43 GMT 2025","Fri Oct 10 14:58:43 GMT 2025","348","API test case","test_projects_list","TestProjectsList","","","Обновление поля - ""Наименование""",""
+"passed","Fri Oct 10 14:58:42 GMT 2025","Fri Oct 10 14:58:43 GMT 2025","561","API test case","test_projects_list","TestProjectsList","","","Создание и удаление проекта",""
+"passed","Fri Oct 10 14:58:43 GMT 2025","Fri Oct 10 14:58:44 GMT 2025","312","API test case","test_projects_list","TestProjectsList","","","Обновление поля - ""Наименование краткое""",""
+"passed","Fri Oct 10 14:58:43 GMT 2025","Fri Oct 10 14:58:43 GMT 2025","326","API test case","test_projects_list","TestProjectsList","","","Обновление поля - ""Номер""",""
+"passed","Fri Oct 10 14:58:42 GMT 2025","Fri Oct 10 14:58:42 GMT 2025","314","API test case","test_projects_list","TestProjectsList","","","Получение списка проектов",""
