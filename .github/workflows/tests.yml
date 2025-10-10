@@ -112,4 +112,10 @@ jobs:
           branch: gh-pages
           folder: allure-report
           clean: true
-          single-commit: true
+          single-commit: false
+
+      - name: Verify deployment
+        run: |
+          echo "✅ Allure report generated successfully"
+          echo "📊 Report size: $(du -sh allure-report | cut -f1)"
+          echo "📁 Files count: $(find allure-report -type f | wc -l)"
