@@ -91,6 +91,7 @@ jobs:
 
       # Шаг 5 - Генерация отчета
       - name: Generate Allure-report
+        if: always()
         env:
           STAGE: ${{ secrets.STAGE }}
         run: |
