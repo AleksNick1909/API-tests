@@ -1,0 +1,4 @@
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions - 201 Created (Time: 0.318s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions-registry/tier
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions-registry/tier?count=20&page=1&companyId=8 - 200 OK (Time: 0.313s)
