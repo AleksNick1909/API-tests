@@ -17,5 +17,13 @@ class UpdateInspectionsSmrGen:
         self.result['registration_date'] = registration_date
         return self
 
+    def set_description(self, description):
+        self.result['description'] = description
+        return self
+
+    def set_status(self, status_id):
+        self.result['status_id'] = int(status_id)
+        return self
+
     def build(self):
         return self.result

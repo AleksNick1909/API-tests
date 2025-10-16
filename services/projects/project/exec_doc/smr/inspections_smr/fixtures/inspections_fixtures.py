@@ -1,6 +1,11 @@
+from config.auth import current_user
 from services.projects.project.exec_doc.smr.inspections_smr.inspections_smr_api import InspectionsSmrAPI
 from services.projects.project.exec_doc.smr.inspections_smr.generators.inspections_smr_update import \
     UpdateInspectionsSmrGen
+from services.projects.project.exec_doc.smr.inspections_smr.generators.commission_results.participants_update import \
+    UpdateParticipantsGen
+from services.projects.project.exec_doc.smr.inspections_smr.generators.composition_inspection.create_presents import \
+    CreatePresentsInspectionGen
 from services.settings.smr.types_inspections.fixtures.types_inspections_fixtures import *
 
 from faker import Faker
@@ -48,22 +53,39 @@ def fixture_get_all_inspections_smr(class_inspections_client: InspectionsSmrAPI)
 
 
 # Состав инспекции добавление работы
-# @pytest.fixture(scope='function')
-# def fixture_add_job_in_inspection(class_inspections_client: InspectionsSmrAPI):
-#     def _fixture_add_job_in_inspection(inspection_id, job_name, job_id, volume_accept=None, inspection_volume=None,
-#                                        pkk_record_id=None):
-#         body = CreatePresentsInspectionGen().set_description(job_name).set_position().set_unit().set_volume().set_type(
-#             "job").set_is_from_structure().set_job_id(job_id).set_settings_numeration().build()
-#         job = class_inspections_client.create_presents_api(payload=body, inspection_id=inspection_id)
-#         body = UpdatePresentsJobsGen().set_inspection_volume(inspection_volume).set_volume_accept(
-#             volume_accept)
-#         if pkk_record_id:
-#             if isinstance(pkk_record_id, tuple):
-#                 body.set_record_and_inspection(*pkk_record_id, inspection=inspection_id)
-#             else:
-#                 body.set_record_and_inspection(pkk_record_id, inspection=inspection_id)
-#         body_finish = body.build()
-#         update_job = class_inspections_client.update_presents_job_api(
-#             payload=body_finish, inspection_id=inspection_id, present_id=job[0]['id'])
-#         return update_job
-#     return _fixture_add_job_in_inspection
+@pytest.fixture(scope='function')
+def fixture_add_job_in_inspection(class_inspections_client: InspectionsSmrAPI):
+    def _fixture_add_job_in_inspection(inspection_id, job_id, job_name):
+        body = CreatePresentsInspectionGen().set_description(job_name).set_position().set_unit().set_volume().set_type(
+            "job").set_is_from_structure().set_job_id(job_id).set_settings_numeration().build()
+        job = class_inspections_client.create_presents_api(inspection_id=inspection_id, payload=body)
+        return job
+    return _fixture_add_job_in_inspection
+
+
+# Результат комиссии добавление участника
+@pytest.fixture(scope='function')
+def fixture_add_participant_in_inspection(class_inspections_client: InspectionsSmrAPI):
+    def _fixture_agreement_inspection(inspection_id):
+        body = UpdateParticipantsGen().set_representative(current_user.representative_id).build()
+        participant = class_inspections_client.add_representatives_in_participants_api(
+            inspection_id=inspection_id, payload=body)
+        return participant
+    return _fixture_agreement_inspection
+
+
+# Выбор статуса инспекции
+@pytest.fixture(scope='function')
+def fixture_select_status_inspection(class_inspections_client: InspectionsSmrAPI):
+    def _fixture_select_status_inspection(inspection_id, representative_id, id_status_inspection):
+        construction_comment = fake.text(max_nb_chars=50)
+        body = UpdateInspectionsSmrGen().set_description(construction_comment).build()
+        comment = class_inspections_client.update_inspection_status_api(
+            inspection_id=inspection_id, representative_id=representative_id,
+            payload=body)
+        body = UpdateInspectionsSmrGen().set_status(id_status_inspection).build()
+        status = class_inspections_client.update_inspection_status_api(
+            inspection_id=inspection_id, representative_id=representative_id,
+            payload=body)
+        return comment, status
+    return _fixture_select_status_inspection

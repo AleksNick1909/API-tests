@@ -42,7 +42,7 @@ class TestProjectsList(BaseTest):
             body = update_project.build()
             project = self.projects_list_api.update_project(payload=body)
 
-        with allure.step(f'Проверить, что "{readable_name}" обновилось корректно'):
+        with allure.step(f'Проверить, что поле "{readable_name}" обновилось корректно'):
             actual_value = getattr(project, field_name)
             assert actual_value == field_value
 

@@ -30,29 +30,30 @@ def fixture_create_inspections_for_dashboard(class_statuses_inspections_client: 
 
         with allure.step('Создание базовой инспекции'):
             inspection = fixture_create_inspection(type_inspection=inspection_type)
-            print("Создана инспекция:", inspection)
+            print("Создана инспекция:", inspection.id)
 
         with allure.step('Установка случайной плановой даты в ближайшие 30 дней'):
             random_date = fake.date_between(start_date="today", end_date="+30d")
             planned_date_begin = random_date.strftime("%Y-%m-%d 00:00:00")
             fixture_update_inspection_smr(inspection_id=inspection.id, planned_date_begin=planned_date_begin)
 
-        # with allure.step('Добавление работы и участника'):
-        #     fixture_add_job_in_inspection(inspection_id=inspection.id, job_id=job_id, job_name=job_name)
-        #     participant = fixture_add_participant_in_inspection(inspection_id=inspection.id)
-        #
-        # with allure.step('Установка статуса'):
-        #     if status_name:
-        #         statuses_response = class_statuses_inspections_client.get_statuses_inspections_api()
-        #         statuses_dict = {status['name']: status for status in statuses_response}
-        #         if status_name not in statuses_dict:
-        #             raise ValueError(f"Статус '{status_name}' не найден. Доступные статусы: {list(statuses_dict.keys())}")
-        #         fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0]['id'],
-        #                                          id_status_inspection=statuses_dict[status_name]['id'])
-        #         # Второй вызов это временное решение для установки статуса в инспекции (с первого раза статус
-        #         # не устанавливается, возможно через несколько лет пофиксят ошибку)
-        #         fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0]['id'],
-        #                                          id_status_inspection=statuses_dict[status_name]['id'])
+        with allure.step('Добавление работы и участника'):
+            fixture_add_job_in_inspection(inspection_id=inspection.id, job_id=job_id, job_name=job_name)
+            participant = fixture_add_participant_in_inspection(inspection_id=inspection.id)
+
+        with allure.step('Установка статуса'):
+            if status_name:
+                statuses_response = class_statuses_inspections_client.get_statuses_inspections_api()
+                statuses_dict = {status.name: status for status in statuses_response}
+                if status_name not in statuses_dict:
+                    raise ValueError(f"Статус '{status_name}' не найден. Доступные статусы: "
+                                     f"{list(statuses_dict.keys())}")
+                fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0].id,
+                                                 id_status_inspection=statuses_dict[status_name].id)
+                # Второй вызов это временное решение для установки статуса в инспекции (с первого раза статус
+                # не устанавливается, возможно через несколько лет пофиксят ошибку)
+                # fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0].id,
+                #                                  id_status_inspection=statuses_dict[status_name].id)
         return inspection
     return _fixture_create_inspections_for_dashboard
 

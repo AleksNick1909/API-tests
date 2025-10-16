@@ -26,7 +26,7 @@ class PlanPeriodItem(BaseModel):
 
 
 class FactPeriodItem(BaseModel):
-    completion_percent: int | None = Field(None, alias='completionPercent')
+    completion_percent: float | None = Field(None, alias='completionPercent')
     date: str
     date_id: int
     fact_confirmer: str | None = Field(None, alias='factConfirmer')
@@ -49,7 +49,7 @@ class FactPeriodItem(BaseModel):
 class JobDatesSchema(BaseModel):
     accepted_gk: str | None = Field(None, alias='acceptedGk')
     accepted_sk: str | None = Field(None, alias='acceptedSk')
-    completion_percent: int | None = Field(None, alias='completionPercent')
+    completion_percent: float | None = Field(None, alias='completionPercent')
     date_begin_fact: str | None = Field(None, alias='dateBeginFact')
     date_begin_plan: str | None = Field(None, alias='dateBeginPlan')
     date_end_fact: str | None = Field(None, alias='dateEndFact')
