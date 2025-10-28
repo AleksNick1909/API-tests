@@ -34,9 +34,6 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.ENV }}
-    permissions:
-      pages: write
-      id-token: write
 
     steps:
       # Клонируем репозиторий
@@ -117,13 +114,10 @@ jobs:
           ls -la allure-report/history/ || echo "No history in report"
 
       # Шаг 6 - Деплой на gh-pages
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Allure report
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: allure-report/
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
