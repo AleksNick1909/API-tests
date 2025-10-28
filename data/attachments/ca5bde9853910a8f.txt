@@ -1,4 +1,0 @@
-INFO     api_logger:api_client.py:22 ➡️ PATCH - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions/3122
-INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PATCH https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions/3122 - 200 OK (Time: 0.300s)
-INFO     api_logger:api_client.py:22 ➡️ DELETE - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions
-INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: DELETE https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions?selectedIds%5B%5D=3122 - 204 No Content (Time: 0.255s)

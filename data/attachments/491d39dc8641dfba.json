@@ -1,0 +1,101 @@
+[
+    {
+        "id": 93,
+        "name": "\u0421\u043e\u0437\u0434\u0430\u043d\u043e",
+        "color": "#9ACDFF",
+        "order": 37.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 94,
+        "name": "\u0412 \u0440\u0430\u0431\u043e\u0442\u0435",
+        "color": "#F2994A",
+        "order": 37.502,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 95,
+        "name": "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043e",
+        "color": "#000",
+        "order": 38.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 96,
+        "name": "\u041f\u0440\u0438\u043d\u044f\u0442\u043e",
+        "color": "#219653",
+        "order": 38.502,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 97,
+        "name": "\u041f\u0440\u0438\u043d\u044f\u0442\u043e \u0441 \u0437\u0430\u043c\u0435\u0447\u0430\u043d\u0438\u044f\u043c\u0438",
+        "color": "#8949A8",
+        "order": 39.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 98,
+        "name": "\u0421\u043e\u0433\u043b\u0430\u0441\u043e\u0432\u0430\u043d\u043e",
+        "color": "#92D050",
+        "order": 39.502,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 99,
+        "name": "\u0423\u0441\u0442\u0440\u0430\u043d\u0438\u0442\u044c \u0437\u0430\u043c\u0435\u0447\u0430\u043d\u0438\u044f",
+        "color": "#FF8888",
+        "order": 40.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 100,
+        "name": "\u0418\u043c\u0435\u044e\u0442\u0441\u044f \u0441\u0432\u0435\u0440\u0445\u043d\u043e\u0440\u043c\u0430\u0442\u0438\u0432\u043d\u044b\u0435 \u043e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u0438\u044f",
+        "color": "#F2994A",
+        "order": 40.502,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 101,
+        "name": "\u0422\u0440\u0435\u0431\u0443\u0435\u0442\u0441\u044f TQ",
+        "color": "#F2994A",
+        "order": 41.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 102,
+        "name": "\u041e\u0442\u043a\u043b\u043e\u043d\u0435\u043d\u043e",
+        "color": "#EB5757",
+        "order": 41.502,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    },
+    {
+        "id": 103,
+        "name": "\u0410\u0440\u0445\u0438\u0432",
+        "color": "#000",
+        "order": 42.002,
+        "system": true,
+        "inspectionTypes": [],
+        "isAvailableToAllTypes": true
+    }
+]
