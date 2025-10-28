@@ -115,8 +115,10 @@ jobs:
 
       # Шаг 6 - Деплой на gh-pages
       - name: Deploy to Github Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.CI_TOKEN }}
-          publish_dir: ./allure-report
-          force_orphan: true
+          token: ${{ secrets.CI_TOKEN }}
+          branch: gh-pages
+          folder: allure-report
+          clean: true
+          silent: false
