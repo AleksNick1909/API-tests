@@ -1,5 +1,5 @@
 name: API tests
-run-name: Test ${{ github.event.inputs.ENV }} | ${{ github.event.inputs.MARKER }} marker | ${{ github.event.inputs.THREADS }} treads
+run-name: Test ${{ github.event.inputs.ENV }} | ${{ github.event.inputs.MARKER }} marker | ${{ github.event.inputs.THREADS }} threads
 
 on:
   workflow_dispatch:
@@ -30,17 +30,18 @@ on:
           - "3"
           - "5"
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   api-tests:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.ENV }}
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
 
     steps:
-      # Клонируем репозиторий
+      # Клонирование репозитория
       - uses: actions/checkout@v4
 
       - name: Checkout gh-pages
@@ -49,26 +50,25 @@ jobs:
           ref: gh-pages
           path: ./.github/gh-pages
 
-      # Подготовка environment.properties
+      # Подготовка allure environment
       - name: Prepare Allure environment
         run: |
           mkdir -p allure-results
           echo "Branch=${{ github.ref_name }}" > allure-results/environment.properties
           echo "Commit=${{ github.sha }}" >> allure-results/environment.properties
           echo "Environment=${{ github.event.inputs.ENV }}" >> allure-results/environment.properties
-          
+
           # Копируем историю ПЕРЕД запуском тестов
           mkdir -p allure-results/history
           if [ -d "./.github/gh-pages/history" ]; then
             cp -R ./.github/gh-pages/history/* allure-results/history/
             echo "✅ History copied from previous report"
-            ls -la allure-results/history/
           else
             echo "⚠️ No history found - first run"
           fi
 
-      # Создание .env файла
-      - name: Create .env file with credentials only
+      # Создание .env
+      - name: Create .env file
         run: |
           cat > .env << EOF
           ENV=${{ github.event.inputs.ENV }}
@@ -83,7 +83,7 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
-      # Создание data_current_user.json
+      # Создание файла с токеном
       - name: Create auth token file
         run: |
           mkdir -p config
@@ -93,23 +93,21 @@ jobs:
       # Запуск тестов
       - name: Run API tests via docker
         env:
-          STAGE: ${{ secrets.STAGE }}
           MARKER: ${{ github.event.inputs.MARKER }}
           THREADS: ${{ github.event.inputs.THREADS }}
         run: |
           docker compose build --no-cache tests
           docker compose up tests --exit-code-from tests
 
-      # Шаг 5 - Генерация отчета
-      - name: Generate Allure-report
+      # Генерация Allure отчета
+      - name: Generate Allure report
         if: always()
-        env:
-          STAGE: ${{ secrets.STAGE }}
         run: |
           docker compose up report
 
       # Проверка отчета
       - name: Verify Allure report
+        if: always()
         run: |
           echo "✅ Allure report generated successfully"
           echo "📊 Report size: $(du -sh allure-report | cut -f1)"
@@ -117,12 +115,23 @@ jobs:
           echo "=== History in report ==="
           ls -la allure-report/history/ || echo "No history in report"
 
-      # Шаг 6 - Деплой на gh-pages
-      - name: Deploy to Github Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      # Загрузка артефакта для GitHub Pages
+      - name: Upload Pages artifact
+        if: always()
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.CI_PAT }}
-          branch: gh-pages
-          folder: allure-report
-          clean: true
-          silent: false
+          path: allure-report
+
+  deploy:
+    needs: api-tests
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
