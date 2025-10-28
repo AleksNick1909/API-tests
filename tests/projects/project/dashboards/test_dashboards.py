@@ -130,3 +130,47 @@ class TestDashboards(BaseTest):
                 assert count_sk_total == diagram_inspections_sk.total, (
                     f'Неверное кол-во всех инспекций СК для даты {dates} ({description}). '
                     f'Ожидалось: {count_sk_total}, получено: {diagram_inspections_sk.total}')
+
+    @allure.title('п.5, Проверка отображения инспекций СК в диаграмме "Инспекции" с периодом "Весь период"')
+    def test_diagram_inspections_sk_all_period(self,
+                                               class_dashboards_client: DashboardsAPI,
+                                               fixture_create_structure_smr_for_dashboard,
+                                               fixture_create_inspections_for_dashboard, fixture_count_inspections):
+
+        with allure.step('Создание труктуры СМР и работы внутри нее'):
+            job = fixture_create_structure_smr_for_dashboard
+        with allure.step('Создание инспекций СК со статусами "Создано", "В работе", "Принято", "Отклонено"'):
+            inspection_statuses = [
+                InspectionStatuses.ACCEPTED,
+                InspectionStatuses.IN_WORK,
+                None,  # статус по умолчанию "Создано"
+                InspectionStatuses.REJECTED
+            ]
+            for status in inspection_statuses:
+                fixture_create_inspections_for_dashboard(
+                    job_id=job.id, inspection_type=InspectionTypes.SK, status_name=status)
+
+        with allure.step('Проверка кол-ва инспекций СК за период "Весь период" в диаграмме "Инспекции"'):
+            with allure.step('Выбрать период "Весь период"'):
+                body = UpdateDashboardsGen().set_all_period(True).set_scale('week').build()
+                setting_period = class_dashboards_client.update_dashboard_period(payload=body)
+            with allure.step(f'Подсчет кол-ва инспекций СК по статусам "Принято", "Отклонено" за весь период'):
+                count_sk_accepted = fixture_count_inspections(
+                    InspectionTypes.SK, InspectionStatuses.ACCEPTED, fact_date=str(today), end_date=str(today))
+                count_sk_rejected = fixture_count_inspections(
+                    InspectionTypes.SK, InspectionStatuses.REJECTED, fact_date=str(today), end_date=str(today))
+                count_sk_total = fixture_count_inspections(
+                    InspectionTypes.SK, status=None, planned_date=str(today), end_date=str(today))
+                params = (UpdateDashboardsGen().set_parameters('СК').set_date(setting_period.date).
+                          set_start_period().set_end_period().set_scale('week').build())
+                diagram_inspections_sk = class_dashboards_client.get_dashboard_diagram_inspections(params=params)
+
+                assert count_sk_accepted == diagram_inspections_sk.accepted, (
+                    f'Неверное кол-во инспекций СК (статус: "Принято") за весь период. '
+                    f'Ожидалось: {count_sk_accepted}, получено: {diagram_inspections_sk.accepted}')
+                assert count_sk_rejected == diagram_inspections_sk.rejected, (
+                    f'Неверное кол-во инспекций СК (статус: "Отклонено") за весь период. '
+                    f'Ожидалось: {count_sk_rejected}, получено: {diagram_inspections_sk.rejected}')
+                assert count_sk_total == diagram_inspections_sk.total, (
+                    f'Неверное кол-во всех инспекций СК за весь период. '
+                    f'Ожидалось: {count_sk_total}, получено: {diagram_inspections_sk.total}')
