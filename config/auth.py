@@ -40,21 +40,21 @@ def _get_access_token():
     print("🔄 Выполняется новая авторизация...")
 
     # 1. получаем токен
-    token_resp = requests.post(Links.TOKEN, json=body, verify=False, timeout=30)
+    token_resp = requests.post(Links.TOKEN, json=body, verify=False, timeout=60)
     token_resp.raise_for_status()
     token_data = token_resp.json()
     access_token = token_data["access_token"]
     user_id = token_data["user_id"]
 
     # 2. забираем данные пользователя
-    # profile_resp = requests.get(
-    #     f"{Links.HOST}/api/users/{user_id}",
-    #     headers={"Authorization": f"Bearer {access_token}"},
-    #     verify=False,
-    #     timeout=60
-    # )
-    # profile_resp.raise_for_status()
-    # profile = profile_resp.json()
+    profile_resp = requests.get(
+        f"{Links.HOST}/api/users/{user_id}",
+        headers={"Authorization": f"Bearer {access_token}"},
+        verify=False,
+        timeout=60
+    )
+    profile_resp.raise_for_status()
+    profile = profile_resp.json()
 
     profile = {"id": user_id, "name": "test_user"}
 
