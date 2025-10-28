@@ -1,0 +1,12 @@
+{
+    "jobID": 3910938,
+    "name": "qtyFact",
+    "value": 12,
+    "data": {
+        "date": "2025-10-30",
+        "date_id": 161158,
+        "isWeekend": false,
+        "plan": {},
+        "fact": {}
+    }
+}

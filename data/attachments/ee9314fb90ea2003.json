@@ -1,0 +1,30 @@
+{
+    "dateBeginPlan": "2025-10-28",
+    "dateEndPlan": "2025-10-28",
+    "dateBeginFact": null,
+    "dateEndFact": null,
+    "qtyPlan": 818,
+    "qtyFact": 0,
+    "factPeriodGeneralLaborCosts": 0,
+    "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+    "units": null,
+    "planPeriod": [
+        {
+            "id": 161162,
+            "qty": 818,
+            "date_id": 15445,
+            "job_id": 3910939,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        }
+    ],
+    "factPeriod": [],
+    "showAllDates": true,
+    "links": [],
+    "completionPercent": "0.0000000000",
+    "factSmrAccumulative": null,
+    "acceptedSk": null,
+    "acceptedGk": null,
+    "jobUploads": []
+}

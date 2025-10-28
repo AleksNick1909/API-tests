@@ -1,0 +1,75 @@
+{
+    "planPeriod": [
+        {
+            "id": 161163,
+            "qty": 282,
+            "date_id": 15446,
+            "job_id": 3910940,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 161164,
+            "qty": 282,
+            "date_id": 15447,
+            "job_id": 3910940,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 161165,
+            "qty": 282,
+            "date_id": 15448,
+            "job_id": 3910940,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        }
+    ],
+    "factPeriod": [
+        {
+            "id": 139740,
+            "uuid": "dff3eb9b-fca5-4722-993b-61f02f186612",
+            "qty": 546,
+            "completionPercent": 64.54,
+            "ks2FactQty": null,
+            "date_id": 4744,
+            "job_id": 3910940,
+            "fact_name": null,
+            "is_weekend": false,
+            "generalLaborCosts": null,
+            "representative": null,
+            "factConfirmer": null,
+            "date": "2025-10-28",
+            "factConfirmerSign": null,
+            "signature": null,
+            "selectedJobParts": [],
+            "selectedJobContents": [],
+            "ks2Acts": []
+        },
+        {
+            "id": 139741,
+            "uuid": "9d7c322c-083c-44df-9ffa-e30dd1dc8dde",
+            "qty": 187,
+            "completionPercent": 22.1,
+            "ks2FactQty": null,
+            "date_id": 4745,
+            "job_id": 3910940,
+            "fact_name": null,
+            "is_weekend": false,
+            "generalLaborCosts": null,
+            "representative": null,
+            "factConfirmer": null,
+            "date": "2025-10-29",
+            "factConfirmerSign": null,
+            "signature": null,
+            "selectedJobParts": [],
+            "selectedJobContents": [],
+            "ks2Acts": []
+        }
+    ],
+    "qtyPlan": 846,
+    "completionPercent": "86.6430260047"
+}

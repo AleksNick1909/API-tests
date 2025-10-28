@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Oct 28 17:24:43 GMT 2025","Tue Oct 28 17:24:43 GMT 2025","350","API test case","test_users","TestUsers","","","Получение информации о пользователе",""
+"passed","Tue Oct 28 17:24:48 GMT 2025","Tue Oct 28 17:24:59 GMT 2025","11181","API test case","test_dashboards","TestDashboards","","","п.3, Проверка отображения инспекций СК в диаграмме ""Инспекции"" с периодом ""Неделя""",""
+"passed","Tue Oct 28 17:25:16 GMT 2025","Tue Oct 28 17:25:27 GMT 2025","11019","API test case","test_dashboards","TestDashboards","","","п.3, Проверка отображения инспекций СК в диаграмме ""Инспекции"" с периодом ""Неделя""",""
+"failed","Tue Oct 28 17:25:01 GMT 2025","Tue Oct 28 17:25:13 GMT 2025","11767","API test case","test_dashboards","TestDashboards","","","п.3, Проверка отображения инспекций СК в диаграмме ""Инспекции"" с периодом ""Неделя""",""
+"passed","Tue Oct 28 17:25:30 GMT 2025","Tue Oct 28 17:25:42 GMT 2025","11383","API test case","test_dashboards","TestDashboards","","","п.3, Проверка отображения инспекций СК в диаграмме ""Инспекции"" с периодом ""Неделя""",""
+"passed","Tue Oct 28 17:24:44 GMT 2025","Tue Oct 28 17:24:44 GMT 2025","265","API test case","test_dashboards","TestDashboards","","","Получение основной информации в Дашборде",""
+"passed","Tue Oct 28 17:25:44 GMT 2025","Tue Oct 28 17:25:56 GMT 2025","11313","API test case","test_dashboards","TestDashboards","","","п.3, Проверка отображения инспекций СК в диаграмме ""Инспекции"" с периодом ""Неделя""",""
