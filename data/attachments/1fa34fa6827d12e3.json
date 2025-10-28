@@ -1,0 +1,57 @@
+{
+    "dateBeginPlan": "2025-10-28",
+    "dateEndPlan": "2025-10-31",
+    "dateBeginFact": null,
+    "dateEndFact": null,
+    "qtyPlan": 985,
+    "qtyFact": 0,
+    "factPeriodGeneralLaborCosts": 0,
+    "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+    "units": null,
+    "planPeriod": [
+        {
+            "id": 160942,
+            "qty": 246.25,
+            "date_id": 15225,
+            "job_id": 3910876,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 160943,
+            "qty": 246.25,
+            "date_id": 15226,
+            "job_id": 3910876,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 160944,
+            "qty": 246.25,
+            "date_id": 15227,
+            "job_id": 3910876,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        },
+        {
+            "id": 160945,
+            "qty": 246.25,
+            "date_id": 15228,
+            "job_id": 3910876,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-31"
+        }
+    ],
+    "factPeriod": [],
+    "showAllDates": true,
+    "links": [],
+    "completionPercent": "0.0000000000",
+    "factSmrAccumulative": null,
+    "acceptedSk": null,
+    "acceptedGk": null,
+    "jobUploads": []
+}

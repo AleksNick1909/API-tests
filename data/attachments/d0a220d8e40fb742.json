@@ -1,0 +1,64 @@
+{
+    "planPeriod": [
+        {
+            "id": 160946,
+            "qty": 116.5,
+            "date_id": 15229,
+            "job_id": 3910877,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 160947,
+            "qty": 116.5,
+            "date_id": 15230,
+            "job_id": 3910877,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 160948,
+            "qty": 116.5,
+            "date_id": 15231,
+            "job_id": 3910877,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        },
+        {
+            "id": 160949,
+            "qty": 116.5,
+            "date_id": 15232,
+            "job_id": 3910877,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-31"
+        }
+    ],
+    "factPeriod": [
+        {
+            "id": 139523,
+            "uuid": "891e5d2b-e7ac-4395-a525-e7e08d5c5015",
+            "qty": 37,
+            "completionPercent": 7.94,
+            "ks2FactQty": null,
+            "date_id": 4744,
+            "job_id": 3910877,
+            "fact_name": null,
+            "is_weekend": false,
+            "generalLaborCosts": null,
+            "representative": null,
+            "factConfirmer": null,
+            "date": "2025-10-28",
+            "factConfirmerSign": null,
+            "signature": null,
+            "selectedJobParts": [],
+            "selectedJobContents": [],
+            "ks2Acts": []
+        }
+    ],
+    "qtyPlan": 466,
+    "completionPercent": "7.9399141631"
+}

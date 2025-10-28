@@ -1,0 +1,284 @@
+[
+    {
+        "id": 76829,
+        "parent_id": 0,
+        "description": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+        "unit": null,
+        "volume": 153,
+        "volume_accept": 153,
+        "volume_not_accept": 0,
+        "inspection_volume": 153,
+        "job": {
+            "id": 3910878,
+            "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+            "units": null,
+            "price": 16,
+            "calculateMethodMaterials": null,
+            "structure": {
+                "id": 64229,
+                "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+                "number": null,
+                "parent": null,
+                "isHaveChildren": false,
+                "isHaveJobs": null,
+                "representative": null,
+                "order": 457.625,
+                "total": 2448,
+                "totalFact": 0,
+                "totalPlan": 2448,
+                "planPercent": 16.67,
+                "factPercent": 100,
+                "sumFact": 2448,
+                "sumPlan": 408,
+                "percentInspection": 100,
+                "sumInspection": 2448,
+                "percentExecDoc": null,
+                "sumExecDoc": null,
+                "dateBeginPlan": "2025-10-28T00:00:00+00:00",
+                "dateBeginFact": "2025-10-28T00:00:00+00:00",
+                "dateEndPlan": "2025-11-04T00:00:00+00:00",
+                "dateEndFact": "2025-11-04T00:00:00+00:00",
+                "aggregatedJobsData": null,
+                "path": [
+                    {
+                        "id": 64229,
+                        "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b"
+                    }
+                ],
+                "direction": null,
+                "typeOfWork": null,
+                "sumExecSchema": null,
+                "percentExecSchema": null,
+                "sumExecSchemaTotal": null,
+                "unit": null,
+                "quantity": null,
+                "performed": null,
+                "qtyInspection": null,
+                "qtyExecDoc": null,
+                "cipher": null,
+                "identifier": null,
+                "laborCosts": null,
+                "laborCostsPerformed": null,
+                "percentKs2": null,
+                "sumKs2": null,
+                "customer": null,
+                "kitRdNumbers": null,
+                "level": null,
+                "levelValue": null,
+                "isCreatedFromEstimate": false
+            },
+            "factMaterials": [],
+            "datesFact": [
+                {
+                    "id": 139527,
+                    "uuid": "0c7e0a24-738e-4f8f-b490-89636d26794a",
+                    "qty": 92,
+                    "date": {
+                        "id": 4744,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139528,
+                    "uuid": "85e8ce43-3110-42d8-b5f0-7d498a8e838c",
+                    "qty": 24,
+                    "date": {
+                        "id": 4745,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139529,
+                    "uuid": "7040cdc0-8bb3-4d31-92bc-0471a94b9d85",
+                    "qty": 8,
+                    "date": {
+                        "id": 4746,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139530,
+                    "uuid": "d3814b11-bccc-4f9f-b525-5f1f04b67820",
+                    "qty": 9,
+                    "date": {
+                        "id": 4747,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139531,
+                    "uuid": "b6171862-d200-46f8-af30-09133537e9dd",
+                    "qty": 8,
+                    "date": {
+                        "id": 4748,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139532,
+                    "uuid": "5a319d79-1c1c-4c08-9ff4-45bee68fb4ec",
+                    "qty": 5,
+                    "date": {
+                        "id": 4749,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139533,
+                    "uuid": "22fae59a-fdc2-46db-9dfd-870ff2f590c9",
+                    "qty": 6,
+                    "date": {
+                        "id": 4750,
+                        "date": "2025-11-03T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139534,
+                    "uuid": "34a80e4e-b40e-4497-a31f-96d985102ed6",
+                    "qty": 1,
+                    "date": {
+                        "id": 4751,
+                        "date": "2025-11-04T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                }
+            ],
+            "datesPlan": [
+                {
+                    "id": 160950,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15233,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160951,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15234,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160952,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15235,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160953,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15236,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160954,
+                    "qty": null,
+                    "date": {
+                        "id": 15237,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160955,
+                    "qty": null,
+                    "date": {
+                        "id": 15238,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160956,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15239,
+                        "date": "2025-11-03T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160957,
+                    "qty": 25.5,
+                    "date": {
+                        "id": 15240,
+                        "date": "2025-11-04T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                }
+            ],
+            "direction": null,
+            "typeOfWork": null,
+            "records": [],
+            "contractNumber": null,
+            "qtyFact": 153,
+            "element": null,
+            "cipher": null,
+            "cipherRd": null,
+            "firstJobDocument": null,
+            "qtyInspection": 153,
+            "qtyInspectionGk": 0,
+            "code": null,
+            "unitRates": [],
+            "constructive": [],
+            "identifier": null
+        },
+        "material": null,
+        "remainder": null,
+        "type": "job",
+        "quantityPerJob": null,
+        "materialType": null,
+        "representative": null,
+        "attachments": [],
+        "isNewMaterial": null,
+        "jobFactDate": null,
+        "order": 2e-10,
+        "inspections": [],
+        "hasMaterials": false,
+        "actualName": null,
+        "constructive": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+        "isVolumeBlocked": null,
+        "note": null
+    }
+]

@@ -1,0 +1,174 @@
+[
+    {
+        "id": 76838,
+        "parent_id": 0,
+        "description": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+        "unit": null,
+        "volume": 771,
+        "volume_accept": 771,
+        "volume_not_accept": 0,
+        "inspection_volume": 771,
+        "job": {
+            "id": 3910880,
+            "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+            "units": null,
+            "price": 62,
+            "calculateMethodMaterials": null,
+            "structure": {
+                "id": 64231,
+                "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+                "number": null,
+                "parent": null,
+                "isHaveChildren": false,
+                "isHaveJobs": null,
+                "representative": null,
+                "order": 457.625,
+                "total": 47802,
+                "totalFact": 0,
+                "totalPlan": 47802,
+                "planPercent": 33.33,
+                "factPercent": 100,
+                "sumFact": 47802,
+                "sumPlan": 15934,
+                "percentInspection": 100,
+                "sumInspection": 47802,
+                "percentExecDoc": null,
+                "sumExecDoc": null,
+                "dateBeginPlan": "2025-10-28T00:00:00+00:00",
+                "dateBeginFact": "2025-10-28T00:00:00+00:00",
+                "dateEndPlan": "2025-10-30T00:00:00+00:00",
+                "dateEndFact": "2025-10-30T00:00:00+00:00",
+                "aggregatedJobsData": null,
+                "path": [
+                    {
+                        "id": 64231,
+                        "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b"
+                    }
+                ],
+                "direction": null,
+                "typeOfWork": null,
+                "sumExecSchema": null,
+                "percentExecSchema": null,
+                "sumExecSchemaTotal": null,
+                "unit": null,
+                "quantity": null,
+                "performed": null,
+                "qtyInspection": null,
+                "qtyExecDoc": null,
+                "cipher": null,
+                "identifier": null,
+                "laborCosts": null,
+                "laborCostsPerformed": null,
+                "percentKs2": null,
+                "sumKs2": null,
+                "customer": null,
+                "kitRdNumbers": null,
+                "level": null,
+                "levelValue": null,
+                "isCreatedFromEstimate": false
+            },
+            "factMaterials": [],
+            "datesFact": [
+                {
+                    "id": 139542,
+                    "uuid": "71c6bea0-0e5c-40cf-9f47-605f771fdcfe",
+                    "qty": 100,
+                    "date": {
+                        "id": 4744,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139543,
+                    "uuid": "8acf74a1-d778-49e1-8114-8adfe3ee383f",
+                    "qty": 528,
+                    "date": {
+                        "id": 4745,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139544,
+                    "uuid": "02b4c6c5-c37b-45e4-85a6-48b2528618be",
+                    "qty": 143,
+                    "date": {
+                        "id": 4746,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                }
+            ],
+            "datesPlan": [
+                {
+                    "id": 160965,
+                    "qty": 257,
+                    "date": {
+                        "id": 15248,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160966,
+                    "qty": 257,
+                    "date": {
+                        "id": 15249,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 160967,
+                    "qty": 257,
+                    "date": {
+                        "id": 15250,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                }
+            ],
+            "direction": null,
+            "typeOfWork": null,
+            "records": [],
+            "contractNumber": null,
+            "qtyFact": 771,
+            "element": null,
+            "cipher": null,
+            "cipherRd": null,
+            "firstJobDocument": null,
+            "qtyInspection": 771,
+            "qtyInspectionGk": 0,
+            "code": null,
+            "unitRates": [],
+            "constructive": [],
+            "identifier": null
+        },
+        "material": null,
+        "remainder": null,
+        "type": "job",
+        "quantityPerJob": null,
+        "materialType": null,
+        "representative": null,
+        "attachments": [],
+        "isNewMaterial": null,
+        "jobFactDate": null,
+        "order": 0.0078125,
+        "inspections": [],
+        "hasMaterials": false,
+        "actualName": null,
+        "constructive": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+        "isVolumeBlocked": null,
+        "note": null
+    }
+]
