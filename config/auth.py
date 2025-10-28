@@ -40,7 +40,7 @@ def _get_access_token():
     print("🔄 Выполняется новая авторизация...")
 
     # 1. получаем токен
-    token_resp = requests.post(Links.TOKEN, json=body, verify=False, timeout=60)
+    token_resp = requests.post(Links.TOKEN, json=body, verify=False, timeout=30)
     token_resp.raise_for_status()
     token_data = token_resp.json()
     access_token = token_data["access_token"]
@@ -51,7 +51,7 @@ def _get_access_token():
         f"{Links.HOST}/api/users/{user_id}",
         headers={"Authorization": f"Bearer {access_token}"},
         verify=False,
-        timeout=60
+        timeout=30
     )
     profile_resp.raise_for_status()
     profile = profile_resp.json()
