@@ -5,6 +5,6 @@ __pycache__/
 .venv/
 .env
 config/.data_current_user.json
-utils/logger/logs/api_requests.log
+utils/logger/logs/
 report
 allure-results
