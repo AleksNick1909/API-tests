@@ -1,0 +1,23 @@
+{
+    "job_ids": [
+        3910956
+    ],
+    "update_data": {
+        "qty_contract": 991,
+        "price_plan": 37,
+        "labor_costs": 1554,
+        "date_begin_plan": "2025-10-28",
+        "date_end_plan": "2025-10-30",
+        "journal_id": null,
+        "type_of_work_id": null,
+        "settingAtgMiddleId": null,
+        "custom_rep_name": null,
+        "representative_id": null,
+        "customer_name": null,
+        "customer_id": null,
+        "units": null,
+        "exec_doc_ids": [
+            null
+        ]
+    }
+}

@@ -1,0 +1,284 @@
+[
+    {
+        "id": 77093,
+        "parent_id": 0,
+        "description": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+        "unit": null,
+        "volume": 887,
+        "volume_accept": 887,
+        "volume_not_accept": 0,
+        "inspection_volume": 887,
+        "job": {
+            "id": 3910954,
+            "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+            "units": null,
+            "price": 51,
+            "calculateMethodMaterials": null,
+            "structure": {
+                "id": 64313,
+                "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+                "number": null,
+                "parent": null,
+                "isHaveChildren": false,
+                "isHaveJobs": null,
+                "representative": null,
+                "order": 457.50390625,
+                "total": 45237,
+                "totalFact": 0,
+                "totalPlan": 45237,
+                "planPercent": 16.67,
+                "factPercent": 100,
+                "sumFact": 45237,
+                "sumPlan": 7539.5,
+                "percentInspection": null,
+                "sumInspection": null,
+                "percentExecDoc": null,
+                "sumExecDoc": null,
+                "dateBeginPlan": "2025-10-28T00:00:00+00:00",
+                "dateBeginFact": "2025-10-28T00:00:00+00:00",
+                "dateEndPlan": "2025-11-04T00:00:00+00:00",
+                "dateEndFact": "2025-11-04T00:00:00+00:00",
+                "aggregatedJobsData": null,
+                "path": [
+                    {
+                        "id": 64313,
+                        "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b"
+                    }
+                ],
+                "direction": null,
+                "typeOfWork": null,
+                "sumExecSchema": null,
+                "percentExecSchema": null,
+                "sumExecSchemaTotal": null,
+                "unit": null,
+                "quantity": null,
+                "performed": null,
+                "qtyInspection": null,
+                "qtyExecDoc": null,
+                "cipher": null,
+                "identifier": null,
+                "laborCosts": null,
+                "laborCostsPerformed": null,
+                "percentKs2": null,
+                "sumKs2": null,
+                "customer": null,
+                "kitRdNumbers": null,
+                "level": null,
+                "levelValue": null,
+                "isCreatedFromEstimate": false
+            },
+            "factMaterials": [],
+            "datesFact": [
+                {
+                    "id": 139788,
+                    "uuid": "31edf3b9-b44d-48f2-a6d6-b16f7cfd49c8",
+                    "qty": 32,
+                    "date": {
+                        "id": 4744,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139789,
+                    "uuid": "25a38392-0896-4c3e-948a-fde92d227f1c",
+                    "qty": 618,
+                    "date": {
+                        "id": 4745,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139790,
+                    "uuid": "1cb9baa8-cf3b-461a-8442-0364e71db1ca",
+                    "qty": 63,
+                    "date": {
+                        "id": 4746,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139791,
+                    "uuid": "fd715bc8-54f0-4445-9ae1-888a00d152c8",
+                    "qty": 83,
+                    "date": {
+                        "id": 4747,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139792,
+                    "uuid": "0c9e4bdf-2640-4f04-9da3-adea385a8f01",
+                    "qty": 47,
+                    "date": {
+                        "id": 4748,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139793,
+                    "uuid": "997018c1-1d1a-4841-9ea2-4d489c39cb97",
+                    "qty": 29,
+                    "date": {
+                        "id": 4749,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139794,
+                    "uuid": "09e798d8-f483-4529-9836-8175d3e7b175",
+                    "qty": 11,
+                    "date": {
+                        "id": 4750,
+                        "date": "2025-11-03T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139795,
+                    "uuid": "1fef51bd-4202-4a71-b041-afc2e504bf97",
+                    "qty": 4,
+                    "date": {
+                        "id": 4751,
+                        "date": "2025-11-04T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                }
+            ],
+            "datesPlan": [
+                {
+                    "id": 161211,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15494,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161212,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15495,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161213,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15496,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161214,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15497,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161215,
+                    "qty": null,
+                    "date": {
+                        "id": 15498,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161216,
+                    "qty": null,
+                    "date": {
+                        "id": 15499,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161217,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15500,
+                        "date": "2025-11-03T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161218,
+                    "qty": 147.833333333,
+                    "date": {
+                        "id": 15501,
+                        "date": "2025-11-04T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                }
+            ],
+            "direction": null,
+            "typeOfWork": null,
+            "records": [],
+            "contractNumber": null,
+            "qtyFact": 887,
+            "element": null,
+            "cipher": null,
+            "cipherRd": null,
+            "firstJobDocument": null,
+            "qtyInspection": 0,
+            "qtyInspectionGk": 0,
+            "code": null,
+            "unitRates": [],
+            "constructive": [],
+            "identifier": null
+        },
+        "material": null,
+        "remainder": null,
+        "type": "job",
+        "quantityPerJob": null,
+        "materialType": null,
+        "representative": null,
+        "attachments": [],
+        "isNewMaterial": null,
+        "jobFactDate": null,
+        "order": 5.96e-08,
+        "inspections": [],
+        "hasMaterials": false,
+        "actualName": null,
+        "constructive": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+        "isVolumeBlocked": null,
+        "note": null
+    }
+]

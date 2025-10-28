@@ -1,0 +1,91 @@
+{
+    "planPeriod": [
+        {
+            "id": 161238,
+            "qty": 172,
+            "date_id": 15521,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 161239,
+            "qty": 172,
+            "date_id": 15522,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 161240,
+            "qty": 172,
+            "date_id": 15523,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        },
+        {
+            "id": 161241,
+            "qty": 172,
+            "date_id": 15524,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-31"
+        },
+        {
+            "id": 161242,
+            "qty": null,
+            "date_id": 15525,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-01"
+        },
+        {
+            "id": 161243,
+            "qty": null,
+            "date_id": 15526,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-02"
+        },
+        {
+            "id": 161244,
+            "qty": 172,
+            "date_id": 15527,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-11-03"
+        }
+    ],
+    "factPeriod": [
+        {
+            "id": 139815,
+            "uuid": "6698138b-2ca8-4a28-94a5-e3230cc47306",
+            "qty": 200,
+            "completionPercent": 23.26,
+            "ks2FactQty": null,
+            "date_id": 4744,
+            "job_id": 3910960,
+            "fact_name": null,
+            "is_weekend": false,
+            "generalLaborCosts": null,
+            "representative": null,
+            "factConfirmer": null,
+            "date": "2025-10-28",
+            "factConfirmerSign": null,
+            "signature": null,
+            "selectedJobParts": [],
+            "selectedJobContents": [],
+            "ks2Acts": []
+        }
+    ],
+    "qtyPlan": 860,
+    "completionPercent": "23.2558139535"
+}

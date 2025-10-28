@@ -1,0 +1,84 @@
+{
+    "dateBeginPlan": "2025-10-28",
+    "dateEndPlan": "2025-11-03",
+    "dateBeginFact": null,
+    "dateEndFact": null,
+    "qtyPlan": 860,
+    "qtyFact": 0,
+    "factPeriodGeneralLaborCosts": 0,
+    "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+    "units": null,
+    "planPeriod": [
+        {
+            "id": 161238,
+            "qty": 172,
+            "date_id": 15521,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 161239,
+            "qty": 172,
+            "date_id": 15522,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 161240,
+            "qty": 172,
+            "date_id": 15523,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        },
+        {
+            "id": 161241,
+            "qty": 172,
+            "date_id": 15524,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-31"
+        },
+        {
+            "id": 161242,
+            "qty": null,
+            "date_id": 15525,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-01"
+        },
+        {
+            "id": 161243,
+            "qty": null,
+            "date_id": 15526,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-02"
+        },
+        {
+            "id": 161244,
+            "qty": 172,
+            "date_id": 15527,
+            "job_id": 3910960,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-11-03"
+        }
+    ],
+    "factPeriod": [],
+    "showAllDates": true,
+    "links": [],
+    "completionPercent": "0.0000000000",
+    "factSmrAccumulative": null,
+    "acceptedSk": null,
+    "acceptedGk": null,
+    "jobUploads": []
+}
