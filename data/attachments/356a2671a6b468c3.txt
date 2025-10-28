@@ -1,6 +1,0 @@
-INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types
-INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types - 200 OK (Time: 0.279s)
-INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3537/inspections
-INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3537/inspections - 201 Created (Time: 0.325s)
-INFO     api_logger:api_client.py:22 ➡️ DELETE - https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions
-INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: DELETE https://aid-dev-new.infra.gk-adept.ru/api/construction-objects/constructions?selectedIds%5B%5D=3537 - 204 No Content (Time: 0.261s)
