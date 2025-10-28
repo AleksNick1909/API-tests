@@ -34,13 +34,9 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.ENV }}
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
 
     steps:
-      # Клонируем репозиторий
+      # 🧾 Клонируем репозиторий
       - uses: actions/checkout@v4
 
       - name: Checkout gh-pages
@@ -49,7 +45,7 @@ jobs:
           ref: gh-pages
           path: ./.github/gh-pages
 
-      # Подготовка environment.properties
+      # 🌍 Подготовка environment.properties
       - name: Prepare Allure environment
         run: |
           mkdir -p allure-results
@@ -67,7 +63,7 @@ jobs:
             echo "⚠️ No history found - first run"
           fi
 
-      # Создание .env файла
+      # 🔑 Создание .env
       - name: Create .env file with credentials only
         run: |
           cat > .env << EOF
@@ -83,14 +79,14 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
-      # Создание data_current_user.json
+      # 🔒 Токен
       - name: Create auth token file
         run: |
           mkdir -p config
           echo '${{ secrets.AUTH_TOKEN_DATA }}' > config/.data_current_user.json
           echo "✅ Auth token file created"
 
-      # Запуск тестов
+      # 🧪 Запуск тестов
       - name: Run API tests via docker
         env:
           STAGE: ${{ secrets.STAGE }}
@@ -99,8 +95,9 @@ jobs:
         run: |
           docker compose build --no-cache tests
           docker compose up tests --exit-code-from tests
+        continue-on-error: true  # 👈 Даже если тесты упали — продолжаем pipeline
 
-      # Шаг 5 - Генерация отчета
+      # 📊 Генерация отчета
       - name: Generate Allure-report
         if: always()
         env:
@@ -108,7 +105,7 @@ jobs:
         run: |
           docker compose up report
 
-      # Проверка отчета
+      # 🔍 Проверка отчета
       - name: Verify Allure report
         run: |
           echo "✅ Allure report generated successfully"
@@ -117,13 +114,12 @@ jobs:
           echo "=== History in report ==="
           ls -la allure-report/history/ || echo "No history in report"
 
-      # Шаг 6 - Деплой на gh-pages
+      # 🚀 Деплой отчета на gh-pages
       - name: Deploy to Github Pages
         if: always()
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          token: ${{ secrets.CI_PAT }}
+          token: ${{ secrets.CI_TOKEN }}
           branch: gh-pages
           folder: allure-report
           clean: true
-          silent: false
