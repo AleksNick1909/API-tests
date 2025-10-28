@@ -1,0 +1,90 @@
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/smr-structures
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/smr-structures - 201 Created (Time: 0.460s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs - 201 Created (Time: 0.371s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs - 200 OK (Time: 0.456s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs/3910929
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs/3910929 - 200 OK (Time: 0.360s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs/3910929/job-dates
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/jobs/3910929/job-dates - 200 OK (Time: 0.355s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell?companyID=8&userID=247 - 200 OK (Time: 0.379s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell?companyID=8&userID=247 - 200 OK (Time: 0.418s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell?companyID=8&userID=247 - 200 OK (Time: 0.417s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell?companyID=8&userID=247 - 200 OK (Time: 0.401s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/jobUpdateDateTabCell?companyID=8&userID=247 - 200 OK (Time: 0.332s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types - 200 OK (Time: 0.280s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections - 201 Created (Time: 0.373s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434 - 200 OK (Time: 0.337s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/presents
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/presents - 200 OK (Time: 0.378s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives - 201 Created (Time: 0.319s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses - 200 OK (Time: 0.271s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives/16090
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives/16090 - 200 OK (Time: 0.397s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives/16090
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96434/representatives/16090 - 200 OK (Time: 0.401s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types - 200 OK (Time: 0.293s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections - 201 Created (Time: 0.377s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435 - 200 OK (Time: 0.359s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/presents
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/presents - 200 OK (Time: 0.456s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives - 201 Created (Time: 0.379s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses - 200 OK (Time: 0.313s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives/16091
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives/16091 - 200 OK (Time: 0.323s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives/16091
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96435/representatives/16091 - 200 OK (Time: 0.442s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types - 200 OK (Time: 0.325s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections - 201 Created (Time: 0.373s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436 - 200 OK (Time: 0.358s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436/presents
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436/presents - 200 OK (Time: 0.487s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436/representatives
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96436/representatives - 201 Created (Time: 0.309s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/types - 200 OK (Time: 0.337s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections - 201 Created (Time: 0.389s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437 - 200 OK (Time: 0.312s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/presents
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/presents - 200 OK (Time: 0.423s)
+INFO     api_logger:api_client.py:22 ➡️ POST - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: POST https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives - 201 Created (Time: 0.370s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/companies/8/settings/inspections/statuses - 200 OK (Time: 0.278s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives/16093
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives/16093 - 200 OK (Time: 0.323s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives/16093
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections/96437/representatives/16093 - 200 OK (Time: 0.407s)
+INFO     api_logger:api_client.py:22 ➡️ PUT - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/dashboard/settings
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: PUT https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/dashboard/settings - 200 OK (Time: 0.330s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections?page=1&count=50 - 200 OK (Time: 0.447s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections?page=1&count=50 - 200 OK (Time: 0.401s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/inspections?page=1&count=50 - 200 OK (Time: 0.484s)
+INFO     api_logger:api_client.py:22 ➡️ GET - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/dashboard/diagram/inspection
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: GET https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/dashboard/diagram/inspection?parameters%5Btab%5D=%D0%92%D0%9A&date=2025-10-29&scale=month - 200 OK (Time: 0.339s)
+INFO     api_logger:api_client.py:22 ➡️ DELETE - https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/smr-structures
+INFO     api_logger:api_client.py:40 ⬅️ HTTP Response: DELETE https://aid-dev-new.infra.gk-adept.ru/api/objects/3586/smr-structures - 204 No Content (Time: 0.377s)

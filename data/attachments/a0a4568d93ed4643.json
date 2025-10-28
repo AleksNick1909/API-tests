@@ -1,0 +1,240 @@
+[
+    {
+        "id": 76996,
+        "parent_id": 0,
+        "description": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+        "unit": null,
+        "volume": 632,
+        "volume_accept": 632,
+        "volume_not_accept": 0,
+        "inspection_volume": 632,
+        "job": {
+            "id": 3910925,
+            "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+            "units": null,
+            "price": 100,
+            "calculateMethodMaterials": null,
+            "structure": {
+                "id": 64282,
+                "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+                "number": null,
+                "parent": null,
+                "isHaveChildren": false,
+                "isHaveJobs": null,
+                "representative": null,
+                "order": 457.53125,
+                "total": 63200,
+                "totalFact": 0,
+                "totalPlan": 63200,
+                "planPercent": 25,
+                "factPercent": 100,
+                "sumFact": 63200,
+                "sumPlan": 15800,
+                "percentInspection": null,
+                "sumInspection": null,
+                "percentExecDoc": null,
+                "sumExecDoc": null,
+                "dateBeginPlan": "2025-10-28T00:00:00+00:00",
+                "dateBeginFact": "2025-10-28T00:00:00+00:00",
+                "dateEndPlan": "2025-11-02T00:00:00+00:00",
+                "dateEndFact": "2025-11-02T00:00:00+00:00",
+                "aggregatedJobsData": null,
+                "path": [
+                    {
+                        "id": 64282,
+                        "name": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b"
+                    }
+                ],
+                "direction": null,
+                "typeOfWork": null,
+                "sumExecSchema": null,
+                "percentExecSchema": null,
+                "sumExecSchemaTotal": null,
+                "unit": null,
+                "quantity": null,
+                "performed": null,
+                "qtyInspection": null,
+                "qtyExecDoc": null,
+                "cipher": null,
+                "identifier": null,
+                "laborCosts": null,
+                "laborCostsPerformed": null,
+                "percentKs2": null,
+                "sumKs2": null,
+                "customer": null,
+                "kitRdNumbers": null,
+                "level": null,
+                "levelValue": null,
+                "isCreatedFromEstimate": false
+            },
+            "factMaterials": [],
+            "datesFact": [
+                {
+                    "id": 139696,
+                    "uuid": "1d41e65b-b193-4692-a3e5-d4261f0f50c2",
+                    "qty": 588,
+                    "date": {
+                        "id": 4744,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139697,
+                    "uuid": "848bbd3d-1887-4b04-aed7-73da46a98e4a",
+                    "qty": 12,
+                    "date": {
+                        "id": 4745,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139698,
+                    "uuid": "7e00317c-fd26-4470-b595-c7fe26d247c5",
+                    "qty": 5,
+                    "date": {
+                        "id": 4746,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139699,
+                    "uuid": "f7198c0d-1ace-48cd-800a-16012d06ed3b",
+                    "qty": 4,
+                    "date": {
+                        "id": 4747,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139700,
+                    "uuid": "457c6d06-f1c4-4f0f-9092-89e98ce59af1",
+                    "qty": 8,
+                    "date": {
+                        "id": 4748,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                },
+                {
+                    "id": 139701,
+                    "uuid": "896a701c-90f4-49f5-8ac2-11552150c6d3",
+                    "qty": 15,
+                    "date": {
+                        "id": 4749,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "fact_name": null,
+                    "representative": null
+                }
+            ],
+            "datesPlan": [
+                {
+                    "id": 161119,
+                    "qty": 158,
+                    "date": {
+                        "id": 15402,
+                        "date": "2025-10-28T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161120,
+                    "qty": 158,
+                    "date": {
+                        "id": 15403,
+                        "date": "2025-10-29T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161121,
+                    "qty": 158,
+                    "date": {
+                        "id": 15404,
+                        "date": "2025-10-30T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161122,
+                    "qty": 158,
+                    "date": {
+                        "id": 15405,
+                        "date": "2025-10-31T00:00:00+00:00",
+                        "is_weekend": false
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161123,
+                    "qty": null,
+                    "date": {
+                        "id": 15406,
+                        "date": "2025-11-01T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                },
+                {
+                    "id": 161124,
+                    "qty": null,
+                    "date": {
+                        "id": 15407,
+                        "date": "2025-11-02T00:00:00+00:00",
+                        "is_weekend": true
+                    },
+                    "measure": null
+                }
+            ],
+            "direction": null,
+            "typeOfWork": null,
+            "records": [],
+            "contractNumber": null,
+            "qtyFact": 632,
+            "element": null,
+            "cipher": null,
+            "cipherRd": null,
+            "firstJobDocument": null,
+            "qtyInspection": 0,
+            "qtyInspectionGk": 0,
+            "code": null,
+            "unitRates": [],
+            "constructive": [],
+            "identifier": null
+        },
+        "material": null,
+        "remainder": null,
+        "type": "job",
+        "quantityPerJob": null,
+        "materialType": null,
+        "representative": null,
+        "attachments": [],
+        "isNewMaterial": null,
+        "jobFactDate": null,
+        "order": 1.8e-09,
+        "inspections": [],
+        "hasMaterials": false,
+        "actualName": null,
+        "constructive": "\u041d\u043e\u0432\u044b\u0439 \u0440\u0430\u0437\u0434\u0435\u043b",
+        "isVolumeBlocked": null,
+        "note": null
+    }
+]

@@ -1,0 +1,93 @@
+{
+    "dateBeginPlan": "2025-10-28",
+    "dateEndPlan": "2025-11-04",
+    "dateBeginFact": null,
+    "dateEndFact": null,
+    "qtyPlan": 391,
+    "qtyFact": 0,
+    "factPeriodGeneralLaborCosts": 0,
+    "name": "\u041d\u043e\u0432\u0430\u044f \u0440\u0430\u0431\u043e\u0442\u0430",
+    "units": null,
+    "planPeriod": [
+        {
+            "id": 161096,
+            "qty": 65.166666667,
+            "date_id": 15379,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-28"
+        },
+        {
+            "id": 161097,
+            "qty": 65.166666667,
+            "date_id": 15380,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-29"
+        },
+        {
+            "id": 161098,
+            "qty": 65.166666667,
+            "date_id": 15381,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-30"
+        },
+        {
+            "id": 161099,
+            "qty": 65.166666667,
+            "date_id": 15382,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-10-31"
+        },
+        {
+            "id": 161100,
+            "qty": null,
+            "date_id": 15383,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-01"
+        },
+        {
+            "id": 161101,
+            "qty": null,
+            "date_id": 15384,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": true,
+            "date": "2025-11-02"
+        },
+        {
+            "id": 161102,
+            "qty": 65.166666667,
+            "date_id": 15385,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-11-03"
+        },
+        {
+            "id": 161103,
+            "qty": 65.166666667,
+            "date_id": 15386,
+            "job_id": 3910920,
+            "measure": null,
+            "is_weekend": false,
+            "date": "2025-11-04"
+        }
+    ],
+    "factPeriod": [],
+    "showAllDates": true,
+    "links": [],
+    "completionPercent": "0.0000000000",
+    "factSmrAccumulative": null,
+    "acceptedSk": null,
+    "acceptedGk": null,
+    "jobUploads": []
+}
