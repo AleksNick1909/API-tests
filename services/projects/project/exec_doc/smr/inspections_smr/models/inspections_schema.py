@@ -65,7 +65,7 @@ class RepresentativesInInspectionSchema(BaseModel):
 class InspectionWeldingSchema(BaseModel):
     id: int
     isometric_drawing: str | None = Field(alias='isometricDrawing')
-    journal_special_zhsr_records: list | None = Field(alias='journalSpecialZhsrRecords')
+    journal_special_zhsr_records: list | None = Field(None, alias='journalSpecialZhsrRecords')
     line_number: int | None = Field(alias='lineNumber')
     project_number: int | None = Field(alias='projectNumber')
     spool: str | None
@@ -94,6 +94,8 @@ class InspectionTypeSchema(BaseModel):
     order: float
     control_type: str | None = Field(alias='controlType')
     inspection_status: str | None = Field(alias='inspectionStatus')
+    system: bool
+    type: str
 
 
 class InspectionSchema(BaseModel):

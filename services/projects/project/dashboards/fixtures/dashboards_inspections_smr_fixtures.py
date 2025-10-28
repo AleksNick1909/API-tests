@@ -50,16 +50,13 @@ def fixture_create_inspections_for_dashboard(class_statuses_inspections_client: 
                                      f"{list(statuses_dict.keys())}")
                 fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0].id,
                                                  id_status_inspection=statuses_dict[status_name].id)
-                # Второй вызов это временное решение для установки статуса в инспекции (с первого раза статус
-                # не устанавливается, возможно через несколько лет пофиксят ошибку)
-                # fixture_select_status_inspection(inspection_id=inspection.id, representative_id=participant[0].id,
-                #                                  id_status_inspection=statuses_dict[status_name].id)
+
         return inspection
     return _fixture_create_inspections_for_dashboard
 
 
 @pytest.fixture(scope='function')
-def fixture_count_inspections(fixture_get_all_inspections):
+def fixture_count_inspections(fixture_get_all_inspections_smr):
     """
         Фикстура фильтрует и подсчитывает количество инспекций по заданным критериям:
         Параметры:
@@ -76,41 +73,41 @@ def fixture_count_inspections(fixture_get_all_inspections):
     """
     def _fixture_count_inspections(inspection_type=None, status=None, planned_date=None, fact_date=None, end_date=None):
 
-        all_inspections = fixture_get_all_inspections()
-        filtered_inspections = all_inspections['data']
+        all_inspections = fixture_get_all_inspections_smr()
+        filtered_inspections = all_inspections.data
         if inspection_type:
             filtered_inspections = [
                 inspection for inspection in filtered_inspections
-                if inspection['inspection_type']['type'] == inspection_type
+                if inspection.inspection_type.type == inspection_type
             ]
         if status:
             filtered_inspections = [
                 inspection for inspection in filtered_inspections
-                if inspection['status']['name'] == status
+                if inspection.status.name == status
             ]
         if planned_date:
             if end_date:
                 filtered_inspections = [
                     inspection for inspection in filtered_inspections
-                    if planned_date <= inspection.get('plannedDateBegin', '').split('T')[0] <= end_date
+                    if planned_date <= inspection.planned_date_begin.split('T')[0] <= end_date
                 ]
             else:
                 filtered_inspections = [
                     inspection for inspection in filtered_inspections
-                    if inspection.get('plannedDateBegin', '').split('T')[0] >= planned_date
+                    if inspection.planned_date_begin.split('T')[0] >= planned_date
                 ]
         if fact_date:
             if end_date:
                 # Фильтр по диапазону дат (от fact_date до end_date включительно)
                 filtered_inspections = [
                     inspection for inspection in filtered_inspections
-                    if fact_date <= inspection.get('factDate', '').split('T')[0] <= end_date
+                    if fact_date <= inspection.fact_date.split('T')[0] <= end_date
                 ]
             else:
                 # Фильтр от fact_date и выше
                 filtered_inspections = [
                     inspection for inspection in filtered_inspections
-                    if inspection.get('factDate', '').split('T')[0] >= fact_date
+                    if inspection.fact_date.split('T')[0] >= fact_date
                 ]
         return len(filtered_inspections)
     return _fixture_count_inspections

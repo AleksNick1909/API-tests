@@ -45,9 +45,9 @@ def fixture_create_job_in_structure_smr(class_structures_smr_client: StructuresS
     print(f'ID созданной работы: {job.id}')
 
     # Функция удаляет созданную структуру СМР
-    # def cleanup():
-    #     class_structures_smr_client.delete_structures_smr_api(structure_smr_id=structure_smr_id)
-    # request.addfinalizer(cleanup)
+    def cleanup():
+        class_structures_smr_client.delete_structures_smr_api(structure_smr_id=structure_smr_id)
+    request.addfinalizer(cleanup)
     return job
 
 
