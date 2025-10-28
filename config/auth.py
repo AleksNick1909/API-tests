@@ -47,14 +47,16 @@ def _get_access_token():
     user_id = token_data["user_id"]
 
     # 2. забираем данные пользователя
-    profile_resp = requests.get(
-        f"{Links.HOST}/api/users/{user_id}",
-        headers={"Authorization": f"Bearer {access_token}"},
-        verify=False,
-        timeout=30
-    )
-    profile_resp.raise_for_status()
-    profile = profile_resp.json()
+    # profile_resp = requests.get(
+    #     f"{Links.HOST}/api/users/{user_id}",
+    #     headers={"Authorization": f"Bearer {access_token}"},
+    #     verify=False,
+    #     timeout=60
+    # )
+    # profile_resp.raise_for_status()
+    # profile = profile_resp.json()
+
+    profile = {"id": user_id, "name": "test_user"}
 
     # 3. формируем словарь в нужном виде
     def safe_nested_get(data, *keys):
