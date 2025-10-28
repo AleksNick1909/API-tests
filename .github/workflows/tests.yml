@@ -34,6 +34,10 @@ jobs:
   api-tests:
     runs-on: ubuntu-latest
     environment: ${{ github.event.inputs.ENV }}
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       # Клонируем репозиторий
