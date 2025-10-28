@@ -124,6 +124,7 @@ jobs:
 
   deploy:
     needs: api-tests
+    if: always()
     runs-on: ubuntu-latest
     permissions:
       pages: write
