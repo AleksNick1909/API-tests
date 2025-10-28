@@ -174,3 +174,147 @@ class TestDashboards(BaseTest):
                 assert count_sk_total == diagram_inspections_sk.total, (
                     f'Неверное кол-во всех инспекций СК за весь период. '
                     f'Ожидалось: {count_sk_total}, получено: {diagram_inspections_sk.total}')
+
+    @pytest.mark.parametrize(
+        'dates, description',
+        get_test_cases_dates('week')
+    )
+    @allure.title('п.6, Проверка отображения инспекций ВК в диаграмме "Инспекции" с периодом "Неделя"')
+    def test_diagram_inspections_vk_week(self,
+                                         class_dashboards_client: DashboardsAPI,
+                                         fixture_create_structure_smr_for_dashboard,
+                                         fixture_create_inspections_for_dashboard, fixture_count_inspections,
+                                         dates, description):
+
+        with allure.step('Создание структуры СМР и работы внутри нее'):
+            job = fixture_create_structure_smr_for_dashboard
+        with allure.step('Создание инспекций ВК со статусами "Создано", "В работе", "Принято", "Отклонено"'):
+            inspection_statuses = [
+                InspectionStatuses.ACCEPTED,
+                InspectionStatuses.IN_WORK,
+                None,  # статус по умолчанию "Создано"
+                InspectionStatuses.REJECTED
+            ]
+            for status in inspection_statuses:
+                fixture_create_inspections_for_dashboard(
+                    job_id=job.id, inspection_type=InspectionTypes.VK, status_name=status)
+        with allure.step('Проверка кол-ва инспекций ВК за период "Неделя" в диаграмме "Инспекции"'):
+            with allure.step('Выбрать период "Неделя"'):
+                body = UpdateDashboardsGen().set_all_period().set_scale('week').build()
+                class_dashboards_client.update_dashboard_period(payload=body)
+
+            with allure.step(f'Подсчет кол-ва инспекций ВК по статусам "Принято", "Отклонено", '
+                             f'за период "Неделя" с указанием даты: {dates} ({description})'):
+                end_date = (datetime.strptime(dates, '%Y-%m-%d') + timedelta(days=7)).strftime('%Y-%m-%d')
+                count_vk_accepted = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.ACCEPTED, fact_date=dates, end_date=end_date)
+                count_vk_rejected = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.REJECTED, fact_date=dates, end_date=end_date)
+                count_vk_total = fixture_count_inspections(
+                    InspectionTypes.VK, status=None, planned_date=dates, end_date=end_date)
+                params = UpdateDashboardsGen().set_parameters('ВК').set_date(dates=dates).set_scale('week').build()
+                diagram_inspections_vk = class_dashboards_client.get_dashboard_diagram_inspections(params=params)
+
+                assert count_vk_accepted == diagram_inspections_vk.accepted, (
+                    f'Неверное кол-во инспекций ВК (статус: "Принято") для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_accepted}, получено: {diagram_inspections_vk.accepted}')
+                assert count_vk_rejected == diagram_inspections_vk.rejected, (
+                    f'Неверное кол-во инспекций ВК (статус: "Отклонено") для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_rejected}, получено: {diagram_inspections_vk.rejected}')
+                assert count_vk_total == diagram_inspections_vk.total, (
+                    f'Неверное кол-во всех инспекций ВК для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_total}, получено: {diagram_inspections_vk.total}')
+
+    @pytest.mark.parametrize(
+        'dates, description',
+        get_test_cases_dates('month')
+    )
+    @allure.title('п.7, Проверка отображения инспекций ВК в диаграмме "Инспекции" с периодом "Месяц"')
+    def test_diagram_inspections_vk_month(self,
+                                          class_dashboards_client: DashboardsAPI,
+                                          fixture_create_structure_smr_for_dashboard,
+                                          fixture_create_inspections_for_dashboard, fixture_count_inspections,
+                                          dates, description):
+
+        with allure.step('Создание структуры СМР и работы внутри нее'):
+            job = fixture_create_structure_smr_for_dashboard
+        with allure.step('Создание инспекций ВК со статусами "Создано", "В работе", "Принято", "Отклонено"'):
+            inspection_statuses = [
+                InspectionStatuses.ACCEPTED,
+                InspectionStatuses.IN_WORK,
+                None,  # статус по умолчанию "Создано"
+                InspectionStatuses.REJECTED
+            ]
+            for status in inspection_statuses:
+                fixture_create_inspections_for_dashboard(
+                    job_id=job.id, inspection_type=InspectionTypes.VK, status_name=status)
+        with allure.step('Проверка кол-ва инспекций ВК за период "Месяц" в диаграмме "Инспекции"'):
+            with allure.step('Выбрать период "Месяц"'):
+                body = UpdateDashboardsGen().set_all_period().set_scale('month').build()
+                class_dashboards_client.update_dashboard_period(payload=body)
+
+            with allure.step(f'Подсчет кол-ва инспекций ВК по статусам "Принято", "Отклонено", '
+                             f'за период "Месяц" с указанием даты: {dates} ({description})'):
+                end_date = (datetime.strptime(dates, '%Y-%m-%d') + timedelta(days=30)).strftime('%Y-%m-%d')
+                count_vk_accepted = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.ACCEPTED, fact_date=dates, end_date=end_date)
+                count_vk_rejected = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.REJECTED, fact_date=dates, end_date=end_date)
+                count_vk_total = fixture_count_inspections(
+                    InspectionTypes.VK, status=None, planned_date=dates, end_date=end_date)
+                params = UpdateDashboardsGen().set_parameters('ВК').set_date(dates=dates).set_scale('month').build()
+                diagram_inspections_vk = class_dashboards_client.get_dashboard_diagram_inspections(params=params)
+
+                assert count_vk_accepted == diagram_inspections_vk.accepted, (
+                    f'Неверное кол-во инспекций ВК (статус: "Принято") для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_accepted}, получено: {diagram_inspections_vk.accepted}')
+                assert count_vk_rejected == diagram_inspections_vk.rejected, (
+                    f'Неверное кол-во инспекций ВК (статус: "Отклонено") для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_rejected}, получено: {diagram_inspections_vk.rejected}')
+                assert count_vk_total == diagram_inspections_vk.total, (
+                    f'Неверное кол-во всех инспекций ВК для даты {date} ({description}). '
+                    f'Ожидалось: {count_vk_total}, получено: {diagram_inspections_vk.total}')
+
+    @allure.title('п.8, Проверка отображения инспекций ВК в диаграмме "Инспекции" с периодом "Весь период"')
+    def test_diagram_inspections_vk_all_period(self,
+                                               class_dashboards_client: DashboardsAPI,
+                                               fixture_create_structure_smr_for_dashboard,
+                                               fixture_create_inspections_for_dashboard, fixture_count_inspections):
+
+        with allure.step('Создание структуры СМР и работы внутри нее'):
+            job = fixture_create_structure_smr_for_dashboard
+        with allure.step('Создание инспекций ВК со статусами "Создано", "В работе", "Принято", "Отклонено"'):
+            inspection_statuses = [
+                InspectionStatuses.ACCEPTED,
+                InspectionStatuses.IN_WORK,
+                None,  # статус по умолчанию "Создано"
+                InspectionStatuses.REJECTED
+            ]
+            for status in inspection_statuses:
+                fixture_create_inspections_for_dashboard(
+                    job_id=job.id, inspection_type=InspectionTypes.VK, status_name=status)
+        with allure.step('Проверка кол-ва инспекций ВК за период "Весь период" в диаграмме "Инспекции"'):
+            with allure.step('Выбрать период "Весь период"'):
+                body = UpdateDashboardsGen().set_all_period(True).set_scale('week').build()
+                setting_period = class_dashboards_client.update_dashboard_period(payload=body)
+
+            with allure.step(f'Подсчет кол-ва инспекций ВК по статусам "Принято", "Отклонено" за весь период'):
+                count_vk_accepted = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.ACCEPTED, fact_date=str(today), end_date=str(today))
+                count_vk_rejected = fixture_count_inspections(
+                    InspectionTypes.VK, InspectionStatuses.REJECTED, fact_date=str(today), end_date=str(today))
+                count_vk_total = fixture_count_inspections(
+                    InspectionTypes.VK, status=None, planned_date=str(today), end_date=str(today))
+                params = (UpdateDashboardsGen().set_parameters('ВК').set_date(setting_period.date).
+                          set_start_period().set_end_period().set_scale('week').build())
+                diagram_inspections_vk = class_dashboards_client.get_dashboard_diagram_inspections(params=params)
+
+                assert count_vk_accepted == diagram_inspections_vk.accepted, (
+                    f'Неверное кол-во инспекций ВК (статус: "Принято") за весь период. '
+                    f'Ожидалось: {count_vk_accepted}, получено: {diagram_inspections_vk.accepted}')
+                assert count_vk_rejected == diagram_inspections_vk.rejected, (
+                    f'Неверное кол-во инспекций ВК (статус: "Отклонено") за весь период. '
+                    f'Ожидалось: {count_vk_rejected}, получено: {diagram_inspections_vk.rejected}')
+                assert count_vk_total == diagram_inspections_vk.total, (
+                    f'Неверное кол-во всех инспекций ВК за весь период. '
+                    f'Ожидалось: {count_vk_total}, получено: {diagram_inspections_vk.total}')
