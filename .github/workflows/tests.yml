@@ -79,6 +79,13 @@ jobs:
           STAGE_CLIENT_ID=${{ secrets.STAGE_CLIENT_ID }}
           EOF
 
+      # Создание data_current_user.json
+      - name: Create auth token file
+        run: |
+          mkdir -p config
+          echo '${{ secrets.AUTH_TOKEN_DATA }}' > config/.data_current_user.json
+          echo "✅ Auth token file created"
+
       # Запуск тестов
       - name: Run API tests via docker
         env:

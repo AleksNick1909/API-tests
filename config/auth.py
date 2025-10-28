@@ -56,8 +56,6 @@ def _get_access_token():
     profile_resp.raise_for_status()
     profile = profile_resp.json()
 
-    profile = {"id": user_id, "name": "test_user"}
-
     # 3. формируем словарь в нужном виде
     def safe_nested_get(data, *keys):
         """Безопасное извлечение вложенных значений"""
